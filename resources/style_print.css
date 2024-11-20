@@ -1,0 +1,23 @@
+body {background:#FFF;}
+
+a {color: #F00;}
+.hide {display: none;}
+
+#site {margin:0; padding:0; border:0;}
+#header {display:none;}
+#page {margin:0; padding:0; border:0;}
+#page-left {display:none;}
+#page-right {display:none;}
+#navigation {display:none;}
+#footer {display:none;}
+
+#page-middle {float:none; width:100%; margin:0; padding:0; border:0;}
+
+#content {margin:0; padding:0; border:0;}
+#content-box {margin:0; padding:0; border:0;}
+#content .main-title {margin:0 0 10px 0; padding:0; color:#812728; font-size:120%; font-weight:bold;}
+
+.body {margin:0; padding:0;}
+.body .img {margin:0; padding:0 5px 0 0; float:left;}
+.body .text {margin:0; padding:0; color:#000; font-size:100%; font-weight:normal; line-height:150%;}
+

@@ -1,0 +1,7 @@
+* {margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, h7, h8, h9, p, pre, blockquote, label, ul, ol, dl, fieldset, address {}
+li, dd {}
+fieldset {}
+
+.close {clear: both; font-size:1px;}
+.hide {display: none}

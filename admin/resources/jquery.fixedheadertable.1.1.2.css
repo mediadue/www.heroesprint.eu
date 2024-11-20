@@ -1,0 +1,53 @@
+/*!
+* jquery.fixedHeaderTable. The jQuery fixedHeaderTable plugin
+*
+* Copyright (c) 2009 Mark Malek
+* http://fixedheadertable.mmalek.com
+*
+* Licensed under MIT
+* http://www.opensource.org/licenses/mit-license.php
+*
+* Launch  : October 2009
+* Version : beta 0.1
+* Released: TBA
+*/
+
+
+/**********/
+/* LAYOUT */
+/**********/
+
+.fht_table_body tbody, .fht_table_body thead, table tbody, table thead {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.fht_loader {
+	display:block;
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#fff url('images/loadingdata.png') no-repeat center center;
+	z-index:1;
+	top:0;
+	left:0;
+	border:1px solid #333;
+}
+
+.fht_fixed_header {
+	width:100%;
+	overflow: hidden;
+	position:relative;
+}
+
+.fht_table_body {
+    position: relative;
+    float: left;
+    margin: 0;
+    padding: 0;
+  	overflow:auto;
+}
+
+/**************/
+/* END LAYOUT */
+/**************/

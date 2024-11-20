@@ -1,0 +1,21 @@
+.supersocialshare.bubble.sss-gradient .sb_network_button.facebook {
+    background-image:url(../images/gradient/ie/bubble_facebook_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_network_button.linkedin {
+    background-image:url(../images/gradient/ie/bubble_linkedin_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_network_button.google {
+    background-image:url(../images/gradient/ie/bubble_googleplus_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_network_button.twitter {
+    background-image:url(../images/gradient/ie/bubble_twitter_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_network_button.pinterest {
+    background-image:url(../images/gradient/ie/bubble_pinterest_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_network_button.email {
+    background-image:url(../images/gradient/ie/bubble_email_share_button.png) !important;
+}
+.supersocialshare.bubble.sss-gradient .sb_main {
+    background:url(../images/gradient/ie/bubble_share_core.png) no-repeat !important;
+}

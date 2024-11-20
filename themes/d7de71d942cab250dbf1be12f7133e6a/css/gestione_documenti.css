@@ -1,0 +1,62 @@
+/**/
+
+#documenti {margin:0px; padding:0px; color:#000; font-size:100%; font-weight:normal; line-height:150%; border: 1px transparent solid;}
+#documenti p{margin:0;padding:0;}
+#documenti ul {list-style-image: none;}
+#documenti a img {border:0px;margin:0px;border:0px red solid;float:left;width: auto;height: auto;}
+
+#documenti ul.anni {list-style:none; margin:5px 0 0px 10px; padding:0px;margin-top: 0px;}
+#documenti ul.anni li {margin:0; padding: 10px 0 10px 0; font-size:100%; color:#000;}
+#documenti ul.anni li a {color:#000; font-weight:bold; text-decoration:underline;padding:0px;margin:0px;}
+#documenti ul.anni li a:hover {color:#CCC; }
+
+#documenti ul.anni-tags {list-style:none; margin:5px 0 0px 10px; padding:0;border: 0px red solid;}
+#documenti ul.anni-tags li {margin:0; padding: 3px 0 0px 5px; font-size:100%; font-weight:normal; color:#000;display: block;margin-bottom:3px;}
+#documenti ul.anni-tags li:hover {}
+#documenti ul.anni-tags li a {color:#000; font-weight:normal; text-decoration:underline;display:inline-block;font-weight: bold;}
+#documenti ul.anni-tags li a img {margin-right:5px;}
+
+#documenti ul.anni-tags li a:hover {color:#CCC; text-decoration:underline;}
+
+#documenti li ul {list-style:none; margin:10px 0 5px 10px; padding:0;}
+
+#documenti ul.files {list-style:none; margin:5px 0 5px 0; padding:10px 0 0 0; border-top:1px solid #999;}
+#documenti ul.files li img {margin-right:5px;float:left;}
+#documenti ul.files li {margin:0; padding: 5px; font-size:100%; font-weight:normal; color:#000;}
+#documenti ul.files li:hover {background:#AAAEA9;}
+#documenti ul.files li a {color:#000; font-weight:normal; text-decoration:underline;}
+#documenti ul.files li a:hover {color:#AB2F41; text-decoration:underline;}
+#documenti #doc_raggruppa_frm {float:right;margin:0;padding:0;border:0px red solid;margin-top:-20px;margin-right:10px;height:20px;line-height: 11px;}
+#documenti #doc_raggruppa_frm label {margin:0;padding:0;padding-left:3px;line-height: 11px;height: 20px;}
+
+#documenti table {}
+#documenti .labelbig{padding:0px;margin:0px;display:inline;text-transform: uppercase;font-size: 14px;color:rgb(61,59,65);float:left;margin-left:-33px}
+#documenti table.default th {padding-left:5px;padding-right:5px;text-align: left;background: rgb(211,220,227) url('') no-repeat; border-right: 0px solid #CCCCCC; border-bottom: 0px solid #CCCCCC; border-top: 0px solid #CCCCCC; color: #4f6b72; font-weight: bold;}
+#documenti table.default th #ordinamento {margin-right:5px;}
+#documenti table.default td {border-right: 0px solid #999999; border-bottom: 0px solid #999999;  border-top: 0px solid #000fff; border-left: 0px solid #000fff; background: transparent; padding:5px; color: #4f6b72; vertical-align: top;}
+#documenti table.default td.alt {background:rgb(213,213,213); color: #797268;}
+#documenti table.default th.spec { border-left: 0px solid #C1DAD7; border-top: 0; background: #000 url(table-bullet1.gif) no-repeat; font-weight: bold;}
+#documenti table.default th.specalt {border-left: 0px solid #C1DAD7; border-top: 0; background: #f5fafa url(table-bullet2.gif) no-repeat; font-weight: bold; color: #797268;}
+#documenti table.default td a {color: #4f6b72;}
+#documenti table.default td.alt a {color: #797268;}
+#documenti table.default td a:hover {color: #000;}
+#documenti table.default input {}                                   
+#documenti #sel_toolbar td {background-color: rgb(238,238,238);}
+#documenti .paginazione {margin:0 0 10px 0; padding: 1%; border-bottom:1px solid #ECECEC;width:90%;}
+#documenti .paginazione .page {text-decoration: underline;height:16px; min-height:16px; margin:0; padding:0px; border:0; background:transparent; color:rgb(94,126,191); font-size: 100%; font-weight: normal; cursor: pointer;}
+#documenti .paginazione .page:hover {text-decoration: underline;}      
+#documenti .paginazione .pagesel {width:16px; height:16px; min-height:16px; margin:0; padding:0 0 1px 0; border:0; background:url(images/pagesel-back.gif) no-repeat top left; color:#000; font-size: 100%; font-weight: bold;}
+#documenti .paginazione .testo {margin:0; padding:10px 0 5px 0; color:rgb(94,126,191); font-size: 100%; font-style:italic; font-weight: normal;}
+#documenti #order_label {display: inline;}
+#documenti #order_label .icona {display: inline; float:left;padding-right: 6px;}
+#documenti #urlcopy {font-family:arial;  font-size:9px; background-color:#dddddd; border-top: 1px #888888 solid; border-left: 1px #888888 solid; border-bottom: 1px #888888 solid; border-right: 1px #888888 solid; height:12px; width:84px;}
+#documenti p.submit {padding-left:123px;}
+#documenti .inputdata {display: none;}
+
+#documenti #ordinamento {border: 0;padding:0;margin:0;}
+#documenti #ordinamento tr, #ordinamento td {border: 0;background-color: transparent;padding:0;margin:0;}
+#documenti #ordinamento input {padding:0;margin:0;padding-right:5px;}
+                   
+#documenti #cambiatd {cursor:pointer;color:red;font-style:italic;}
+#documenti #cambiatd:hover {background-color: orange;}
+#documenti div.ordini {border-top:2px gray dashed;margin-top:20px;}

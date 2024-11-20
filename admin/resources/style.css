@@ -1,0 +1,225 @@
+* {margin:0; padding:0;}
+h1, h2, h3, h4, h5, h6, h7, h8, h9, p, pre, blockquote, label, ul, ol, dl, fieldset, address {}
+li, dd {}
+fieldset {}
+
+.close {clear: both; font-size:1px;}
+.hide {display: none}
+
+body {
+	font-family: Arial, Verdana, Helvetica, sans-serif; 
+	font-size:70%; 
+	color:#666; 
+	background:#CCC url(back.gif) top repeat-x;
+	margin:2% 2% 2% 2%; padding:0;
+}
+
+a {color:#751E3A; text-decoration:underline;}
+a:hover {color:#B7305B; text-decoration:none;}
+.close {clear:both; font-size:1px;}
+
+
+#site {margin:0; padding:0; background:#586b92 url(shadow.jpg) right repeat-y; overflow:hidden;}
+#header {margin:0; padding:0 24px 0 0; background: url(header-right.jpg) top right no-repeat;}
+#header-logo {float:left; margin:0; padding:0;}
+#header-logo img{float:left; margin:0; padding:0; border:0;}
+#header-box {margin:0 0 0 259px; padding:0; background: url(header-left.jpg) top left no-repeat;}
+#header-content {height:84px; min-height:84px; margin:0 0 0 14px; padding:0; background: url(header-back.jpg) repeat-x; text-align:right}
+#header-info {margin:0; padding:8px 0 0 0;}
+#header-info p {margin:0; padding:0 0 5px 0; font-size:100%; color:#BCD7EA;}
+#header-info p span{color:#FFF;}
+
+
+#header-info ul {margin:0; padding:0; border:0; list-style:none;}
+#header-info ul li {display:inline; margin:0; padding:0 3px 0 3px; border-right:1px solid #fff; color:#fff; font-weight:normal; height:0;}
+#header-info ul li a {padding:0 3px 0 3px; color:#BCD7EA; font-weight:normal; text-decoration:none;}
+#header-info ul li a:hover {background:#63AD00; color:#FFF; text-decoration:none;}
+#header-info ul li a.logout:hover {background:#900;}
+
+/**/
+
+#content {clear:both; margin:0 7px 0 0; padding:1% 1% 1% 1%; background:url(content-top.jpg) top repeat-x; overflow:hidden;}
+
+/**/
+
+#menu {float: left; width: 20%; margin:0; padding:0; color:#000;}
+#menu .module {margin:0 0 10px 0; padding:0; background: #8f2547 url(back-one.jpg) top left no-repeat; border:1px solid #FFF;}
+#menu .module .title {height:35px; min-height:35px; margin:0; padding:0; border-bottom:1px solid #FFF;}
+#menu .module .title p {margin:0; padding:10px 0 10px 26px; color:#FFF; font-size:100%; font-weight:bold; text-decoration:none;}
+#menu .module .title p a {color:#FFF; text-decoration:none;}
+#menu .module .title p a:hover {color:#C9E7E9; text-decoration:none; }
+
+#menu .module ul {list-style:none; margin:0; padding:0; border-top:3px solid #E7E7E7; border-bottom:3px solid #E7E7E7;}
+#menu .module ul li {margin:0; padding: 4px 0 4px 28px; background:#F9F9F9 url(menu-list.gif) top left no-repeat; border-top: 1px solid #FFF; border-bottom: 1px solid #ECECEC; font-size: 100%; font-weight: normal; color:#CCC}
+#menu .module ul li:hover {background-color:#ECECEC;}
+#menu .module ul li a {text-decoration: none; font-size: 100%; font-weight: normal; color:#828282;}
+#menu .module ul li a:hover {color: #000;}
+
+/**/
+
+#area {float: right; padding: 0; width: 79%; color:#666;}
+#modulo-titolo {height:35px; min-height:35px; margin:0; padding:0; background: #55678C url(back-two.gif) top left no-repeat; border:1px solid #FFF;}
+#modulo-titolo p {margin:0; padding:10px 0 10px 26px; color:#FFF; font-size:100%; font-weight:bold;}
+#modulo-titolo p span.modulo {font-weight:normal;}
+#modulo-titolo p span.menu {font-weight:bold;}
+#body {margin:0; padding:1% 1% 1% 1%; background:#FFF; border-top:3px solid #E7E7E7; border-bottom:3px solid #E7E7E7;}
+#body .result {margin: 5px 0 5px 0; padding: 0; color: #000; font-size:90%;}
+
+.responsecontent {margin:0; padding:0;}
+.responsecontent p {margin:0; padding:10px; border:1px solid #E2C822; color:#666; font-weight:bold;}
+.responsecontent p a {color:#000; text-decoration:underline;}
+.responsecontent p a:hover {color:#333; text-decoration:none;}
+.responsecontent p.error {color:#900;}
+.ajax-loading {height:16px; min-height:16px; margin:0; padding:0;background:#FFF url(ajax-loading.gif) no-repeat left;}
+
+/**/
+
+.inputdata {}
+.inputdata .elemento {clear:left; margin:0; padding:3px 0 3px 0; font-weight: normal; overflow:hidden;}
+.inputdata div.label {margin:0 0 3px 0; padding:0; color:#666; font-weight:normal;}
+.inputdata span.label {display:block; float:left; width:100px; color:#666; font-weight:normal; text-align:right;}
+.inputdata span.large {width:150px;}
+.inputdata span.value {padding:0 0 0 10px; color:#666; font-weight:normal;}
+.inputdata div.value {margin:0 0 3px 0; color:#666; font-weight:normal;}
+.inputdata div.value ul {margin:0; padding:0; list-style:none;}
+.inputdata div.value ul li {margin:0; padding:3px 0 3px 0;}
+.inputdata input.text {width:60%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size:100%;}
+.inputdata input.textsmall {width:20%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size: 100%;}
+.inputdata input.textlarge {width:80%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size: 100%;}
+.inputdata input.file {width:60%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size:100%;}
+.inputdata input.checkbox {margin: 3px 0 3px 0;}
+.inputdata textarea.default {width:60%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 100%;}
+.inputdata textarea.textEditor {width:80%; margin:0; padding:0; border:0;}
+.inputdata select.default {width:60%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size: 100%;}
+.inputdata select.small {width:40%; margin:0; padding:2px; border:1px solid #7F9DB9; background:#F9F9F9; color: #000; font-size: 100%;}
+.inputdata .btn {width: 120px; margin:0 5px 5px 0; padding:1px 1px 1px 3px; border: 3px double #751E3A; background:#8F2547; color: #FFF; font-size: 100%; font-weight:bold; text-align:left; cursor:pointer;}
+.inputdata .btn:hover {background:#B7305B;}
+.inputdata img {border:0;}
+
+/**/
+p.editinplace {margin:0; padding:2px;}
+.editin {background:#ffffd3;}
+.editin_div {margin:2px 0 2px 0; padding:0;}
+.editin_div textarea {width:90%; margin:0 0 5px 0; padding:2px; border:1px solid #7F9DB9; background:#ffffd3; font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 100%;}
+.editin_save {margin:0 3px 0 0; padding:1px; border:1px solid #751E3A; background:#8F2547; color:#FFF; font-size: 100%; font-weight:bold; text-align:left; cursor:pointer;}
+.editin_save:hover {background:#B7305B;}
+.editin_cancel {margin:0 0 0 3px; padding:1px; border:1px solid #666; background:#808080; color:#333; font-size: 100%; font-weight:bold; text-align:left; cursor:pointer;}
+.editin_cancel:hover {background:#9E9E9E;}
+
+/**/
+
+#demo-status {width:420px; padding:10px 15px; background-color:#F9F7ED;}
+#demo-status .progress {margin-right:0.5em; background:white url(upload-progress.gif) no-repeat; background-position:+50% 0;}
+#demo-status .progress-text {font-size:0.9em; font-weight:bold;}
+#demo-list {list-style:none; width:450px; margin:0;}
+#demo-list li.file {border-bottom:1px solid #eee; background:url(upload_file.png) no-repeat 4px 4px;}
+#demo-list li.file.file-uploading {background-image:url(upload_uploading.png); background-color:#D9DDE9;}
+#demo-list li.file.file-success {background-image:url(upload_success.png);}
+#demo-list li.file.file-failed {background-image:url(upload_failed.png);}
+#demo-list li.file .file-name {display:block; clear:left; height:40px; margin-left:44px; line-height:40px; font-size:1.2em; font-weight:bold;}
+#demo-list li.file .file-size {font-size:0.9em; line-height:18px; float:right; margin-top:2px; margin-right:6px;}
+#demo-list li.file .file-info {display:block; margin-left:44px; font-size:0.9em; line-height:20px; clear:left;}
+#demo-list li.file .file-remove {clear:right; float:right; line-height:18px; margin-right:6px;}
+
+/**/
+
+.esito {clear: both; margin: 10px 0 10px 0; padding:10px 0 0 0; border-top:3px solid #ECECEC;}
+.esito .header {margin:0; padding:0 0 5px 0; color: #666;}
+.esito .btn {width:120px; margin:0 0 0 5px; padding:1px 1px 1px 3px; border:3px double #751E3A; background:#8F2547; color:#FFF; font-size:100%; font-weight:bold; text-align:left; cursor:pointer;}
+.esito .btn:hover {background:#B7305B;}
+
+.esito .item {margin:0 0 2px 0; padding:1%; background:#FCFCFC; border-bottom:1px solid #ECECEC;}
+.esito .item .titolo {margin:0; padding:8px 0 4px 0; color:#217FBD; font-size:110%; font-weight: bold;}
+.esito .item .detail {margin:0; padding:1px 0 1px 0; color:#999; font-size:90%; font-weight: normal;}
+.esito .item .detail .value {color:#666; font-size:100%; font-weight: normal;}
+.esito .item:hover {background:#ECECEC;}
+.esito .item:hover .titolo {color:#8F2547;}
+.esito .item:hover .detail .value {color:#8F2547;}
+.esito .item .message {margin:0; padding:1px 0 1px 0; color:#900; font-size:90%; font-weight: normal;}
+.esito .item .btn-box {margin:0; padding:4px 0 4px 0;}
+.esito .item .btn-box input {margin:0; padding:1px;}
+.esito .item .btn-box img {border:0;}
+.esito .item .icoshow:hover {background:#090;}
+.esito .item .icoins:hover {background:#63AD00;}
+.esito .item .icoupd:hover {background:#63AD00;}
+.esito .item .icodel:hover {background:#900;}
+.esito .item .icoprint:hover {background:#FFF;}
+
+.esito .ins {margin:0 0 10px 0; padding:1%; color:#8DB831; font-weight:normal;}
+.esito .ins:hover {background:#ECECEC; color:#8F2547;}
+.esito .ins .img {float:left; margin:0 3px 0 0; padding:2px; cursor:pointer;}
+.esito .ins .img:hover {background:#63AD00;}
+
+/**/
+
+.riepilogo-header {margin:0; padding:6px; background:#CAE8EA; color:#4f6b72; font-weight:bold;}
+.riepilogo {clear:both; height:100px; margin:0 0 20px 0; padding:5px 0 5px 0; overflow:auto;}
+.riepilogo-message {margin:0; padding:6px; color:#900; font-size:90%; font-weight: normal;}
+
+.riepilogo .item {margin:0 0 2px 0; padding:3px 5px 3px 5px; border-bottom:1px dotted #ECECEC;}
+.riepilogo .item .titolo {margin:0; padding:0 0 1px 0; color:#217FBD; font-size:100%; font-weight: bold;}
+.riepilogo .item .detail {margin:0; padding:1px 0 1px 0; color:#999; font-size:90%; font-weight: normal;}
+.riepilogo .item .detail .value {color:#666; font-size:100%; font-weight: normal;}
+
+/**/
+
+table.default {width:100%; margin:0 0 10px 0; padding:0; border:0}
+table.default caption {padding:0 0 5px 0; font-style:italic; text-align: right;}
+table.default th {padding:6px 6px 6px 12px; background:#CAE8EA url(table-bg-header.jpg) no-repeat; border-right: 1px solid #C1DAD7; border-bottom: 1px solid #C1DAD7; border-top: 1px solid #C1DAD7; color:#4f6b72; font-weight: bold; text-align: left;}
+table.default th.nobg {border-top: 0; border-left: 0; border-right: 1px solid #C1DAD7; background: none;}
+table.default td {border-right: 1px solid #C1DAD7; border-bottom: 1px solid #C1DAD7; background: #fff; padding: 6px 6px 6px 12px; color: #4f6b72;}
+table.default td.alt {background: #F5FAFA; color: #797268;}
+table.default th.spec {border-left: 1px solid #C1DAD7; border-top: 0; background: #fff url(table-bullet1.gif) no-repeat; font-weight: bold;}
+table.default th.specalt {border-left: 1px solid #C1DAD7; border-top: 0; background: #f5fafa url(table-bullet2.gif) no-repeat; font-weight: bold; color: #797268;}
+table.default td a {color: #4f6b72;}
+table.default td.alt a {color: #797268;}
+table.default td a:hover {color: #000;}
+table.default input {margin:-2px; padding:2px;}
+table.default input.btnupd:hover {background:#63AD00;}
+table.default input.btnins:hover {background:#63AD00;}
+table.default input.btndel:hover {background:#900;}
+
+/**/
+
+#body .container {margin:0; padding:0; border:0; overflow:hidden;}
+#body .column {float:left; margin:0; padding:0; border:0;}
+
+
+/**/
+
+#footer {clear:both; margin:0; padding:0 24px 0 0; background: url(footer-right.jpg) top right no-repeat;}
+#footer-box {margin:0; padding:0; background: url(footer-left.jpg) top left no-repeat;}
+#footer-content {height:42px; min-height:42px; margin:0 0 0 14px; padding:0; background: url(footer-back.jpg) repeat-x; text-align:right}
+#footer-info {margin:0; padding:5px 0 0 0;}
+#footer-info img {border:0;}
+
+/**/
+
+.paginazione {margin:0 0 10px 0; padding: 1%; border-bottom:1px solid #ECECEC;}
+.paginazione .page {height:16px; min-height:16px; margin:0; padding:0; border:0; background:#FFF; color:#666; font-size: 100%; font-weight: bold; cursor: pointer;}
+.paginazione .page:hover {background:#FCFCFC;}
+.paginazione .pagesel {width:16px; height:16px; min-height:16px; margin:0; padding:0 0 1px 0; border:0; background:url(pagesel-back.gif) no-repeat top left; color:#FFF; font-size: 100%; font-weight: bold;}
+.paginazione .testo {margin:0; padding:10px 0 5px 0; color:#666; font-size: 100%; font-style:italic; font-weight: normal;}
+
+/**/
+
+button.calendar {width:20px; height:20px; border:0; margin-right:6px; background:url(calendar-icon.gif); cursor: pointer;}
+button.calendar:hover, button.calendar.active {background-position: 0 20px;}
+div.calendar {background: url(calendar.png); height: 195px; padding: 0 6px; text-align: center; width: 147px;}	
+div.calendar div {background: none !important; cursor: move; height: 185px; overflow: hidden; padding-top: 10px; position: relative; width: 147px;}
+div.calendar caption {color: #333; font: normal 12px/16px Arial, Helvetica, sans-serif; padding-top: 6px; text-align: center; width: 100%;}
+div.calendar caption a {cursor:pointer; display:block; height:12px; overflow:hidden; position:absolute; text-indent:-100px; top:17px; width:11px;}
+div.calendar caption a.prev {background-image:url(calendar-prev.gif); left:0;}
+div.calendar caption a.next {background-image:url(calendar-next.gif); right:0;}
+div.calendar caption a:hover {background-position:0 12px;}
+div.calendar caption span {height:25px; position:relative; text-align:center;}
+div.calendar caption span.month {padding-right:8px;}
+div.calendar caption span.month:after {content:',';}
+div.calendar table {background:#FFF; border:0; border-collapse:collapse; border-spacing:0; cursor:default; margin:0 auto; overflow:hidden; width:147px;}
+div.calendar td, div.calendar th {border:0; color:#0597DB; font:normal 12px Arial, Helvetica, sans-serif; height:21px; text-align:center; width:21px;}
+div.calendar td {background:url(calendar-td.gif); color:#FFF; font-size:11px;}
+div.calendar td.invalid {color: #999;}
+div.calendar td.valid {background:url(calendar-valid.gif); color:#0597DB; cursor:pointer;}
+div.calendar td.hilite {background:url(calendar-hilite.gif);}
+div.calendar td.inactive {background:url(calendar-td.gif) 0 100%; color:#FFF;}
+div.calendar td.active, div.calendar td.hover {background: url(calendar-valid.gif) 0 100%; color:#FFF; cursor:pointer;}

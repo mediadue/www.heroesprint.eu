@@ -1,0 +1,154 @@
+SELECTOR DE FECHA DE FUTURE SHOCK
+---------------------------------
+
+PRODUCTO:   Selector de Fechas Popup  FS JavaScript - versión 3.11 gratis
+COPYRIGHT:  Julio 2004 (c) Future Shock Ltd.
+CONTACTO:   post@future-shock.net
+COMPATIBILIDAD:
+    PC (WinXP): Internet Explorer 4/5/5.5/6/7, Netscape 4.78/7, Mozilla Firefox 1.04, Opera 7.53
+    Mac (OS9):  Internet Explorer 5.1, Netscape 7.1
+    Mac (OSX):  Internet Explorer 5.2, Netscape 7.2, Mozilla Firefox 1.04, Safari (véase la nota al final de este archivo)
+LIMITACIONES:
+    Netscape 4, Internet Explorer 4, y Safari se ejecutan en modo "legacy" – no mostrarán el selector de fechas
+    Popup, en su lugar proporcionan un tipo de entrada estándar que valida cualquier texto introducido por los usuarios.
+    Internet Explorer 4 en PC presenta un problema al mostrar más de dos selectores de fechas en una misma página.
+
+Este producto es un producto freeware: usted lo puede utilizar en tantos sitios web como lo desee, pero no se le permite realizar cambio alguno en el script ni en esta nota de copyright. 
+La versión con licencia, disponible en http://software.future.shock.net, le permite fijar períodos de fechas para su selección y no contiene enlaces a Future Shock.
+
+
+
+A:  INSTALACIÓN FÁCIL PARA WEBMASTERS PRINCIPIANTES
+---------------------------------------------------
+
+1.  Suba todas las carpetas contenidas en este archivo comprimido (zip) a su sitio Web, ubicándolas en la misma carpeta que la página a la que quiere añadir el Selector de Fecha.
+
+2.  Añada las siguientes líneas de código a su página Web:
+
+    <SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect.js"></SCRIPT>
+    <LINK REL="stylesheet" HREF="styles/FSdateSelect.css" type="text/css">
+
+    las líneas deberían insertarse en cualquier lugar dentro de las etiquetas o tags <HEAD></HEAD>.
+
+3.  Asegúrese de que hay una etiqueta <FORM> y </FORM> en la página. Añada NAME="FormFecha" a su etiqueta <FORM …, es decir <FORM NAME=" FormFecha">
+
+4.  Copie y pegue esta línea de código en el lugar de la página donde quiere ubicar el cuadro de selección de fecha (asegurándose de que esté dentro de las etiquetas <FORM> y </FORM>):
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("FormFecha","MiFecha","Ninguna",100,"images/FSdateSelector/")</SCRIPT>
+
+    El nombre del campo en este ejemplo es "MiFecha". Si su campo de fecha requiere un nombre diferente, cambie "MiFecha" al nombre que desee (asegurándose de que el nombre no contiene espacios).
+
+5.  Si requiere que sus fechas tengan formato americano (mm/dd/aaaa), cambie la línea creada en el punto 4 para tener el mismo aspecto que la siguiente:
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("FormFecha","MiFecha","Ninguna",100,"images/FSdateSelector/","ESUS")</SCRIPT>
+
+
+B:  INSTRUCCIONES MÁS AVANZADAS
+-------------------------------
+
+1.  Suba los archivos de las carpetas images, scripts y styles a una ubicación apropiada en su sitio Web.
+
+2.  Copie estas líneas en la sección HEAD de su página Web y cambie las rutas para reflejar la ubicación de los archivos:
+
+    <SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect.js"></SCRIPT>
+    <LINK REL="stylesheet" HREF="styles/FSdateSelect.css" type="text/css">
+
+    Ambas líneas de código deberán colocarse en cualquier lugar dentro de las etiquetas <HEAD> y </HEAD>.
+
+3.  Asegúrese de que hay un formulario (Form) en la página y de que este FORM tiene un atributo NAME (en esta página de muestra se ha utilizado el nombre "FormFecha")
+
+4.  Copie y pegue esta línea de código en el lugar de la página donde quiere ubicar el cuadro de selección de fecha (asegurándose de que esté dentro de las etiquetas <FORM> y </FORM>):
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("FormFecha","MiFecha","Ninguna",100,"images/FSdateSelector/")</SCRIPT>
+
+    Cambie "FormFecha" al nombre que tiene su formulario (<FORM>) html (asegurándose de que el nombre no contiene espacios). Cambie asimismo "images/FSdateSelector/" a la ruta que tengan sus imágenes del Selector de Fecha en su sitio Web.
+
+    Si su campo de fecha requiere un nombre diferente, cambie "MiFecha" al nombre deseado, por ejemplo "FechaVencimiento" (asegurándose de que el nombre no contiene espacios).
+
+5.  Configure su Selector de Fecha utilizando los parámetros opcionales de la llamada a la función (detallados a continuación). Usted puede utilizar estos parámetros para cambiar el idioma y el formato de fecha, para limitar la selección de fechas a un intervalo y para controlar la apariencia del selector.
+
+
+C:  PARA AÑADIR MÁS DE UN SELECTOR DE FECHAS AL MISMO FORMULARIO HTML
+---------------------------------------------------------------------
+
+Usted puede añadir cualquier número de campos de Selector de Fechas a su formulario, sólo tiene que asegurarse de que  cada uno de ellos tiene un nombre de campo diferente. Tenga en cuenta que puede que no se muestren las páginas en Internet Explorer 4 cuando se utilizan más de dos Selectores de Fecha; esto parece ser un "bug" o error en este explorador en particular para el que no existe una solución conocida.
+
+
+D:  PARÁMETROS DE LLAMADA A LA FUNCIÓN
+--------------------------------------
+
+FSfncWriteFieldHTML(NombreDelForm,NombreDelCampo,ValorDelCampo,AnchoDelCampo,RutadeImágenes,IDdeIdioma,DisabilitarNinguna,UsarOnClick,FechaInicialVálida,FechaFinalVálida,HposOffset,VposOffset,AcciónAlCambiarFecha)
+
+¡IMPORTANTE! Los parámetros FechaInicialVálida,FechaFinalVálida y AcciónAlCambiarFecha no tienen ningún efecto en la versión gratuita  del Selector de Fechas, están incluidos en ésta para mantener la compatibilidad del código entre las dos versiones.
+
+Todos los parámetros a partir de IDdeIdioma son opcionales. La siguiente es una línea ejemplo con los parámetros de llamada mínimos para crear un Selector de Fecha:
+
+<SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("FormFecha","MiFecha","Ninguna",100,"images/FSdateSelector/")</SCRIPT>
+
+A continuación tiene un ejemplo que contiene todos los parámetros disponibles (se ha dividido en tres líneas para hacerlo más legible):
+
+<SCRIPT LANGUAGE="JavaScript">
+FSfncWriteFieldHTML("FormFecha","MiFecha","01/01/2004",100,"images/FSdateSelector/","ES",true,true,"10/10/2002","9/10/2004",99,-16,"alert('hola')")
+</SCRIPT>
+
+1.  NombreDelForm: debe coincidir exactamente con el atributo NAME (nombre) del elemento FORM en el que está contenido el Selector de Fecha. Éste debe ser único y no puede contener espacios.
+
+2.  NombreDelCampo: especifica el nombre (NAME) del campo del formulario en el que se almacenará sus fecha cuando se entregue (submit) el formulario (form). Éste debe ser único y no puede contener espacios.
+
+3.  ValorDelCampo: especifica un valor por defecto de la fecha cuando se carga la página. Esta fecha debe tener un formato válido para el idioma o el formato de fecha especificado; por ejemplo, DD/MM/AAAA para Español o MM/DD/AAAA para el formato de fecha americano. También puede especificar los siguientes valores nulos:
+
+    a. 'None' para inglés
+    b. 'Aucune' para francés
+    c. 'Kein' para alemán
+    d. 'Ninguna' para español
+
+4.  AnchoDelCampo: especifica la anchura del Selector de Fecha en pixels.
+
+5.  RutadeImágenes: define la ruta de la carpeta que contiene las imágenes del Selector de Fecha.
+
+6.  IDdeIdioma: especifica el idioma en el que se mostrará el Selector de Fecha; se puede utilizar cualquiera de los siguientes códigos de dos letras:
+
+    a. 'EN' para inglés internacional
+    b. 'US' para inglés con formato de fecha americano
+    c. 'DE' para alemán
+    d. 'FR' para francés
+    e. 'ES' para español
+    f. 'ESUS' para español con formato de fecha americano
+
+7.  DisabilitarNinguna: si se da un valor true (cierto) de desactiva el botón "Ninguna" situado en la esquina inferior derecha del Selector de Fecha, impidiendo por lo tanto que se pueda seleccionar una fecha nula, es decir, que no se seleccione ninguna fecha. Los únicos valores aceptables para este parámetro son true y false (cierto y falso).
+
+8.  UsarOnClick: si se da un valor true, el Selector de Fechas aparece cuando el usuario hace clic en el icono del almanaque. Es más común hacerlo aparecer simplemente moviendo el puntero del ratón sobre el icono. Los únicos valores aceptables para este parámetro son true y false.
+
+9.  FechaInicialVálida y FechaFinalVálida: fije ambos parámetros para limitar la selección de fechas a un intervalo restringido. Ambas fechas deben tener un formato válido para el idioma especificado (; por ejemplo, DD/MM/AAAA para español o MM/DD/AAAA para el formato de fecha americano).
+
+10.  HposOffset y VposOffset: La posición de visualización del Selector de Fechas se puede controlar mediante estos dos parámetros, los cuales han de ser números enteros positivos o negativos (sin punto decimal). Por ejemplo, para mostrar el Selector de Fechas 20 píxeles más hacia arriba de la posición por defecto y 100 píxeles más hacia la derecha, utilizaría lo siguiente:
+
+    FSfncWriteFieldHTML("FormFecha","MiFecha"," Ninguna ",100,"images/FSdateSelector/","ES",true,true,false,false,100,-20)
+
+    Observe que FechaInicialVálida y  FechaFinalVálida se han fijado a false  de forma que no se aplicará una limitación de intervalo de fechas.
+
+11.	AcciónAlCambiarFecha: especifica código en JavaScript a ejecutar cuando los usuarios seleccionan una fecha; por ejemplo, el siguiente mostrará un mensaje emergente cuando los usuarios seleccionen una fecha:
+
+    FSfncWriteFieldHTML("FormFecha","MiFecha","Ninguna",100,"images/FSdateSelector/","ES",true,true,false,false,0,0,"alert('cambiada')")
+
+
+B:  PROBLEMAS DE CODIFICACIÓN DEL DOCUMENTO
+-------------------------------------------
+
+El archivo principal en JavaScript para el Selector de Fechas está guardado en formato ANSI estándar, lo que quiere decir que funcionará con cualquier documento HTML en el que se haya declarado un Content-Type de utf-8 o en el que no se haya declarado. Content-Type se declara normalmente utilizando una META tag en la sección HEAD de su documento HTML como se ilustra a continuación:
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+Si está utilizando un tipo de contenido UTF-8, tendrá que utilizar la versión del archivo JavaScript guardado en un formato compatible. Por ejemplo. Si su HTML contiene la siguiente META tag en la sección HEAD:
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">,
+
+tendrá que cambiar la etiqueta SCRIPT que carga el archivo JavaScript externo a:
+
+<SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect-UTF8.js"></SCRIPT>
+
+
+F: COMPATIBILIDAD CON SAFARI
+----------------------------
+
+Safari es el único navegador, de los que nosotros sepamos, que no entiende la encripción que utilizamos para proteger nuestro código en JavaScript. Esta situacón puede que se mejore con versiones posteriores a 1.3.1 (esta versión es, hasta la fecha, un software inacabado). Si necesita utilizar forzosamente el Selector de Fechas en un entorno Safari, hemos incluido versiones con encripción especial de nuestro código JavaScript en la carpeta/directorio "scripts". Observe que éstas tienen un tamaño de 47Kb, comparadas con los 18Kb de nuestras encripciones de código normalmente utilizadas.

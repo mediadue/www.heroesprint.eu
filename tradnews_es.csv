@@ -1,0 +1,27 @@
+﻿id;testo
+623;<p>Gracias por tu indicación.</p>
+624;#nome#  te ha aconsejado los siguientes artículos
+625;"<p><span style=""font-family: arial, helvetica, sans-serif;"">Hola:</span></p>
+<p><span style=""font-family: arial, helvetica, sans-serif;""><strong>#nome#</strong> (#email#) Te aconseja echar un vistazo al siguiente artículo.</span></p>
+<p><strong><span style=""font-size: small;""><span style=""color: #ff0000;""><a href=""http://#SERVER_NAME#/scheda-prodotto.php?menid=#idcategoria#""><span style=""font-family: arial, helvetica, sans-serif;"">#id_categorie_str_magazzino#</span></a></span></span></strong></p>
+<p><span style=""font-family: arial, helvetica, sans-serif;""><a href=""http://#SERVER_NAME#/scheda-prodotto.php?menid=#idcategoria#"">#immagine_file#</a></span></p>
+<p style=""text-align: justify;""><strong><span style=""color: #ff0000;"">#nome#: </span></strong><strong><span style=""color: #ff0000;"">#commento#</span></strong></p>
+<p><span style=""font-family: arial, helvetica, sans-serif;"">Buena Navegación,<br />#ecomm_ragionesociale#</span></p>"
+622;¡Gracias por tu apoyo! Te mantendremos actualizado sobre nuestras Súper Ofertas y Promociones
+618;<p>Gracias por haber contactado con nosotros. <br />Te responderemos lo antes posible.</p>
+614;<p>Tu solicitud se ha enviado correctamente.<br />Recibirás en breve un correo electrónico con las credenciales de acceso. </p>
+615;<p>Actualmente, no es posible llevar a cabo el procedimiento debido a problemas técnicos en el sistema. Por favor, inténtalo más tarde.</p>
+616;Datos del área reservada
+617;"<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;"">Gentile #nome#,</span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;"">confirmamos el registro en el sitio #SERVER_NAME#.</span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;"">Para activar tu cuenta, simplemente has de <strong>pegar en el navegador la siguiente dirección:</strong></span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;""> </span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;"">#SERVER_ROOT#index.php?documents=1&user=#id#&pass=#pwd#</span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;"">Cuando estés en el área reservada, podrás elegir la contraseña que usarás para los siguientes accesos en combinación con la siguiente ID de Usuario:</span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;""><strong>#login#</strong></span></span></p>
+<p><span style=""font-size: medium;""><span style=""font-family: arial,helvetica,sans-serif;""><span style=""font-family: arial, helvetica, sans-serif;""><span style=""font-family: arial, helvetica, sans-serif;"">Cordiales saludos.</span></span></span></span><span style=""font-family: arial, helvetica, sans-serif;""><br /></span></p>
+<hr />
+<p><span style=""font-family: arial, helvetica, sans-serif;""><span style=""color: #888888;""><span style=""font-size: x-small;"">#ecomm_immagine_file#<br /><br />#ecomm_ragionesociale#   #ecomm_indirizzo#   #ecomm_cap# #ecomm_comune# (#ecomm_provincia#)   Tel. #ecomm_telefono#    Fax #ecomm_fax#</span></span></span></p>
+<p> </p>
+<p> </p>"
+611;Pedido N.º 

@@ -1,0 +1,263 @@
+﻿/*INPUT*/
+input{
+	font-family: arial;
+	font-size: 11px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	border: 1px solid #666666;
+}
+.inputlarge{
+	font-family: arial;
+	font-size: 11px;
+	font-style: normal;
+	text-transform: none;
+	color: #666666;
+	background: #FFFFFF;
+	width:250px;
+	border-color:#aaaaaa;
+}
+.inpp{
+	font-family: arial;
+	font-size: 11px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	border-color:#aaaaaa;
+	background: #FFFFFF;
+	
+}
+
+.opt1{
+	font-family: arial;
+	font-size: 9px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:40px;
+}
+.opt2{
+	font-family: arial;
+	font-size: 9px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:40px;
+}
+.opt3{
+	font-family: arial;
+	font-size: 9px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:52px;
+}
+.input{
+	font-family: arial;
+	font-size: 10px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:138px;
+}
+
+.area {
+	font-family: arial;
+	font-size: 12px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:400px; height:100px; 
+	border-width: 1px;
+	border-style:solid;
+	border-color:#999999;
+	
+}
+.arial_grey {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #353535;
+}
+.arial_white {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bold;
+	font-variant: normal;
+	color: #FFFFFF;
+}
+.arial_red {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: bolder;
+	font-variant: normal;
+	color: #242751;
+}
+.arial_green {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	color: #435717;
+}
+.error {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #FF0000;
+}
+.ok {
+	font-family: Arial;
+	font-size: 10px;
+	font-weight: normal;
+	color: #283D2E;
+}
+.prodotto {
+	font-size: 14px;
+	color: #004B8C;
+}
+.intestazione {
+	font-size: 14px;
+	color: #777777;
+}
+
+.in{
+	font-family: arial;
+	font-size: 10px;
+	font-style: normal;
+	text-transform: none;
+	color: #aaaaaa;
+	background: #FFFFFF;
+	width:300px;
+	border: 1px solid #aaaaaa;
+	}
+
+.suggest_link {
+	background-color: #E1EEC4;
+	padding: 2px 5px 2px 5px;
+	width:300px;
+	z-index:2;
+}
+.suggest_link_over {
+	background-color: #FFD351;
+	padding: 1px 4px 1px 4px;
+	border: 1px solid #aaaaaa;
+	width: 300px;
+	z-index:2;
+}
+
+#mostrasuggerimenti {
+	position: absolute; 
+	z-index:2;
+	background-color: #E1EEC4; 
+	text-align: left; 
+	border: 0px solid #555555;	
+	float:left;
+	filter:alpha(opacity=80);
+	-moz-opacity:.80;
+	opacity:.80;
+}		
+
+#prova {
+	position: absolute; 
+	z-index:2;
+	background-color: #aa3333; 
+	text-align: left; 
+	border: 1px solid #111111;			
+}
+
+.eventi {
+	font-family: Arial:
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: normal;
+	color: #666666;
+}
+
+.dataoggi {
+	font-family: Arial;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: bold;
+	
+	color: #ffffff;
+}
+
+.strutture_txt {
+	font-family: Arial;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: normal;
+	line-height:16px;
+	color: #666666;
+}
+
+.strutture_ind {
+	font-family: Arial;
+	font-size: 10px;
+	font-style: italic;
+	font-weight: normal;
+	text-decoration: none;
+	font-variant: normal;
+	line-height:14px;
+	color: #666666;
+}
+
+.strutture_tit {
+	font-family: Arial;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	text-decoration: none;
+	font-variant: normal;
+	line-height:14px;
+	color: #FFA401;
+}
+
+.cerca {
+	font-family: arial;
+	font-size: 11px;
+	font-style: normal;
+	text-transform: none;
+	color: #000000;
+	background: #FFFFFF;
+	width:240px;
+}
+
+.accaddeoggi {
+	font-family: arial;
+	font-size: 24px;
+	font-style: normal;
+	font-weight:bold;	
+	color: #ffffff;
+
+}
+
+.titolipagine{
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	color:#A1CD3D;
+}
+
+.myText
+{
+	clear:both;
+	display:block;
+	margin-bottom: 20px;
+}

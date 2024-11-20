@@ -1,0 +1,6 @@
+div.gmap {width: 400px; height: 400px; border: 1px solid #aaaaaa; margin-left: auto; margin-right: auto; margin-bottom:35px; margin-top: 15px;}
+div.gmap span,div.gmap span a {color: #000;font-size: 10px;}
+div.gmap span.gmap-denominazione {font-weight: bold;color: #DE5E22;font-size: 11px;}
+div.gmap span.gmap-indirizzo {font-weight: bold;}
+
+div.gmap-logo {padding-bottom:5px;}

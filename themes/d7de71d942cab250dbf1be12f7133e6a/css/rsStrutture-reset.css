@@ -1,0 +1,38 @@
+/* SPECIFICARE QUI LA PROPRIETA' WIDTH */
+div.rsStrutture div.rsStrutture-li-content {overflow: hidden; margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;width:auto;min-width: 0px;}
+div.rsStrutture div.rsStrutture-li-content:hover {width: auto;}
+
+/* SPECIFICARE QUI LA PROPRIETA' CLEAR, BACKGROUND-IMAGE  (SE NECESSARIO) */
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li {float:left;margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;list-style: none outside url();width:auto;min-width: 0px;}
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li:hover {float:left;margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;list-style: none outside url();width:auto;min-width: 0px;}
+
+/* SPECIFICARE QUI LA PROPRIETA' TEXT-ALIGN, PADDING (SE NECESSARIO) */
+div.rsStrutture ul.rsStrutture-ul div.rsStrutture-a-r {}
+
+/* SPECIFICARE QUI LINE-HEIGHT */
+div.rsStrutture div.rsStrutture-a-text {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 13px;width: auto;min-width: 0px;}
+div.rsStrutture div.rsStrutture-a-text:hover {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 13px;width: auto;min-width: 0px;}
+div.rsStrutture div.rsStrutture-a-text.rsStrutture-a-selected {background-color: transparent;}
+
+/* SPECIFICARE QUI LE INDENTAZIONI (SE NECESSARIO) */
+div.rsStrutture ul.ul2 {padding-left:10px;}
+div.rsStrutture ul.ul3 {padding-left:20px;}
+div.rsStrutture ul.ul4 {padding-left:30px;}
+div.rsStrutture ul.ul5 {padding-left:40px;}
+div.rsStrutture ul.ul6 {padding-left:50px;}
+div.rsStrutture ul.ul7 {padding-left:60px;}
+div.rsStrutture ul.ul8 {padding-left:70px;}
+div.rsStrutture ul.ul9 {padding-left:80px;}
+div.rsStrutture ul.ul10 {padding-left:90px;}
+
+/* AZZERAMENTO DEL CSS DELLE STRUTTURE */
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li a.rsStrutture-a {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;list-style: none outside url();width:auto;min-width: 0px;}
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li a.rsStrutture-a:hover {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;list-style: none outside url();width:auto;min-width: 0px;}
+div.rsStrutture {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;width:auto;min-width: 0px;}
+div.rsStrutture div,div.rsStrutture img,div.rsStrutture a,div.rsStrutture span,div.rsStrutture ul,div.rsStrutture li {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;width:auto;min-width: 0px;}
+div.rsStrutture div.rsStrutture-li-content-r {display: none;}
+div.rsStrutture div.rsStrutture-a-ico {display: none;}
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li div.rsStrutture-a-l {display: none; margin: 0px;padding: 0px;line-height: 12px;height: 0px;min-height: 0px;width:0px;min-width: 0px;}
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li div.rsStrutture-a-l img {display: none;}
+div.rsStrutture ul.rsStrutture-ul li.rsStrutture-li div.rsStrutture-li-content-l {margin: 0px;padding: 0px;line-height: 12px;height: auto;min-height: 0px;width:auto;min-width: 0px;}
+div.rsStrutture div.rsStrutture-li-content-l a.rsStrutture-a {margin: 0px;padding: 0px;line-height: 12px;width:auto;min-width: 0px;cursor: pointer;}

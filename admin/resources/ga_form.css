@@ -1,0 +1,42 @@
+#contattaci{background:#f8f8f8;font:13px Trebuchet MS,Arial,Helvetica,Sans-Serif;color:rgb(101,106,105);line-height:160%;margin:0;padding:0;text-align:center;}
+#contattaci.style5{margin:0 auto;  background:#fff;  width:430px;  padding:20px 40px;  text-align:left;}
+
+#contattaci h1{font-size:200%;font-weight:normal;}
+#contattaci h2,#contattaci h3,#contattaci h4,#contattaci h5,#contattaci h6{font-weight:normal;margin:1em 0;}
+#contattaci h2{font-size:160%;}
+#contattaci h3{font-size:140%;}
+#contattaci h4{font-size:120%;}
+#contattaci a{text-decoration:none;color:#f30;}
+#contattaci a:hover{color:#999;}
+#contattaci table,#contattaci input,#contattaci textarea,#contattaci select,#contattaci li{font:100% Trebuchet MS,Arial,Helvetica,Sans-Serif;line-height:160%;color:#333;}
+#contattaci p,#contattaci blockquote,#contattaci ul,#contattaci ol,#contattaci form{margin:1em 0;}
+#contattaci blockquote{}
+#contattaci img{border:none;}
+#contattaci hr{display:none;}
+#contattaci table{margin:1em 0;width:100%;border-collapse:collapse;}
+#contattaci th,#contattaci td{padding:2px 5px;}
+#contattaci th{text-align:left;}
+#contattaci li{display:list-item;}
+
+/* form 5 */
+#form5{margin:1em 0;padding-top:10px;}
+#form5 p{clear:both;margin:.5em 0;overflow:hidden;}
+#form5 span#mylabel{font-weight: bold;margin-left:80px;}
+#form5 fieldset{margin:0;padding-top:.5em;border:none;border-top:1px solid #f1f1f1;}
+#form5 legend{background:#fff;padding:0 5px;font-style:italic;}
+#form5 label{float:left;width:70px;display:block;text-align:right;margin-right:15px}
+#form5 label.mylabel{float:left;width:auto;display:block;text-align:right;margin-right:15px;padding-left: 3px;}
+#form5 input.text,#form5 textarea {margin:0;width:250px;border:1px solid #ddd;padding:3px 5px 3px 25px;background-repeat: no-repeat;}
+#form5 input.checkbox {margin-left:80px;width:auto;padding:0;float:left;}
+#form5 textarea{height:125px;overflow:auto;margin-bottom:10px;}
+#form5 p.submit{clear:both;margin:1em 0;padding:.5em 105px;border-top:1px solid #f1f1f1;}
+#form5 button{height:32px;line-height:28px;border-top:1px solid #999;border-left:1px solid #999;border-right:1px solid #333;border-bottom:1px solid #333;padding:0 10px 0 25px;color:#333;cursor:pointer;text-align:left;font-size:11px;font-weight:bold;}
+
+/* ***************************************************** */
+
+#box {position:absolute;width:300px;height:80px;border:1px #000000 solid;background-color:#EEEEEE;z-index:10;filter: alpha(opacity=80); -moz-opacity:0.8;top:50%;left:50%;margin:-40px 0 0 -150px;display: block;text-align: center;}
+#box div.ok {position:absolute;width:300px;height:60px;top:50%;left:50%;margin:-30px 0 0 -150px;display: block;text-align: center;font-size: 12px;font-weight: normal;color:rgb(47,34,76);overflow:auto;}
+#box div.ok p {padding:0px;margin:0px;}
+#box span {position:relative;top:58px;left:125px;}
+#box span a {font-size: 10px;color: #292E5D;text-decoration:none;}
+#box span a:hover {color: #800000;}

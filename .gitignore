@@ -1,0 +1,13 @@
+# Directories da ignorare
+/vendor/
+/backups/
+/cache/
+/logs/
+/temp/
+/tools/
+# File da ignorare
+*.log
+.env
+composer.phar
+Thumbs.db
+.DS_Store

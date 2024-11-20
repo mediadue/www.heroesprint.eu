@@ -1,0 +1,19 @@
+Questo è un riepilogo dei passi essenziali all'installazione.
+
+1) Modificare i parametri di configurazione situati nel file "config.php".
+2) Copiare tutti i file in una directory del sito (ad esempio "/stats").
+3) Impostare i permessi:
+        666 al file "config.php"
+        777 alla directory "option"
+        777 alla directory "browscap"
+	666 al file "browscap/browscap.ini"
+4) Eseguire dal browser lo script di installazione "http://www.tuosito.it/stats/setup.php".
+5) Infine configurare tramite il menù Opzioni presente in "http://www.tuosito.it/stats/admin.php".
+
+Nota: affinché Browscap possa aggiornare automaticamente il database dei browser, sistemi operativi e motori di ricerca è necessario che il server consenta le connessioni verso l'esterno (Altervista ad esempio non lo fa di default ma è un'opzioni che va abilitata).
+
+----------------------------------------------------------------------------------------------------
+
+Ulteriori informazioni sul sito:
+
+http://robertobizzarri.altervista.org/php-stats/

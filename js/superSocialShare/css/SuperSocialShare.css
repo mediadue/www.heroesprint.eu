@@ -1,0 +1,288 @@
+/*
+ *
+ * Bubble Share Style
+ *
+ */
+
+.supersocialshare.bubble {
+    display: block;
+    width: 32px;
+    height: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.supersocialshare.bubble .sb_main {
+    display: block;
+    width: 32px;
+    height: 32px;
+    background-position: 0px 0px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-size: 32px 64px;
+}
+
+.supersocialshare.bubble .sb_main:hover {
+    background-position: 0px -32px;
+}
+
+.supersocialshare.bubble .sb_network_button {
+    display: block;
+    width: 23px;
+    height: 23px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 1;
+    cursor: pointer;
+    text-indent: -9999px;
+    background-size: 23px 46px;
+}
+
+.supersocialshare.bubble .sb_network_button:hover {
+    background-position: 0px -23px;
+}
+
+/*
+ *
+ * Gradient Theme
+ *
+ */
+
+.supersocialshare.bubble.sss-gradient .sb_main {
+    background-image: url(../images/gradient/bubble_share_core.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.facebook {
+    background-image: url(../images/gradient/bubble_facebook_share_button.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.linkedin {
+    background-image: url(../images/gradient/bubble_linkedin_share_button.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.google {
+    background-image: url(../images/gradient/bubble_googleplus_share_button.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.twitter {
+    background-image: url(../images/gradient/bubble_twitter_share_button.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.pinterest {
+    background-image: url(../images/gradient/bubble_pinterest_share_button.png);
+}
+
+.supersocialshare.bubble.sss-gradient .sb_network_button.email {
+    background-image:url(../images/gradient/bubble_email_share_button.png);
+}
+
+
+
+
+
+/*
+ *
+ * Flat Theme
+ *
+ */
+
+.supersocialshare.bubble.sss-flat .sb_main {
+    background-image: url(../images/flat/bubble_share_core.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.facebook {
+    background-image: url(../images/flat/bubble_facebook_share_button.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.linkedin {
+    background-image: url(../images/flat/bubble_linkedin_share_button.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.google {
+    background-image: url(../images/flat/bubble_googleplus_share_button.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.twitter {
+    background-image: url(../images/flat/bubble_twitter_share_button.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.pinterest {
+    background-image: url(../images/flat/bubble_pinterest_share_button.png);
+}
+
+.supersocialshare.bubble.sss-flat .sb_network_button.email {
+    background-image:url(../images/flat/bubble_email_share_button.png);
+}
+
+@media  only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    .supersocialshare.bubble.sss-flat .sb_main {
+        background-image: url(../images/flat/2x/bubble_share_core.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.facebook {
+        background-image: url(../images/flat/2x/bubble_facebook_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.linkedin {
+        background-image: url(../images/flat/2x/bubble_linkedin_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.google {
+        background-image: url(../images/flat/2x/bubble_googleplus_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.twitter {
+        background-image: url(../images/flat/2x/bubble_twitter_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.pinterest {
+        background-image: url(../images/flat/2x/bubble_pinterest_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-flat .sb_network_button.email {
+        background-image:url(../images/flat/2x/bubble_email_share_button.png);
+    }
+}
+
+
+
+
+
+/*
+ *
+ * Light Theme
+ *
+ */
+
+.supersocialshare.bubble.sss-light .sb_main {
+    background-image: url(../images/light/bubble_share_core.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.facebook {
+    background-image: url(../images/light/bubble_facebook_share_button.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.linkedin {
+    background-image: url(../images/light/bubble_linkedin_share_button.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.google {
+    background-image: url(../images/light/bubble_googleplus_share_button.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.twitter {
+    background-image: url(../images/light/bubble_twitter_share_button.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.pinterest {
+    background-image: url(../images/light/bubble_pinterest_share_button.png);
+}
+
+.supersocialshare.bubble.sss-light .sb_network_button.email {
+    background-image:url(../images/light/bubble_email_share_button.png);
+}
+
+@media  only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    .supersocialshare.bubble.sss-light .sb_main {
+        background-image: url(../images/light/2x/bubble_share_core.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.facebook {
+        background-image: url(../images/light/2x/bubble_facebook_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.linkedin {
+        background-image: url(../images/light/2x/bubble_linkedin_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.google {
+        background-image: url(../images/light/2x/bubble_googleplus_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.twitter {
+        background-image: url(../images/light/2x/bubble_twitter_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.pinterest {
+        background-image: url(../images/light/2x/bubble_pinterest_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-light .sb_network_button.email {
+        background-image:url(../images/light/2x/bubble_email_share_button.png);
+    }
+}
+
+
+
+
+
+/*
+ *
+ * Dark Theme
+ *
+ */
+
+.supersocialshare.bubble.sss-dark .sb_main {
+    background-image: url(../images/dark/bubble_share_core.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.facebook {
+    background-image: url(../images/dark/bubble_facebook_share_button.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.linkedin {
+    background-image: url(../images/dark/bubble_linkedin_share_button.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.google {
+    background-image: url(../images/dark/bubble_googleplus_share_button.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.twitter {
+    background-image: url(../images/dark/bubble_twitter_share_button.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.pinterest {
+    background-image: url(../images/dark/bubble_pinterest_share_button.png);
+}
+
+.supersocialshare.bubble.sss-dark .sb_network_button.email {
+    background-image:url(../images/dark/bubble_email_share_button.png);
+}
+
+@media  only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi) {
+    .supersocialshare.bubble.sss-dark .sb_main {
+        background-image: url(../images/dark/2x/bubble_share_core.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.facebook {
+        background-image: url(../images/dark/2x/bubble_facebook_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.linkedin {
+        background-image: url(../images/dark/2x/bubble_linkedin_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.google {
+        background-image: url(../images/dark/2x/bubble_googleplus_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.twitter {
+        background-image: url(../images/dark/2x/bubble_twitter_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.pinterest {
+        background-image: url(../images/dark/2x/bubble_pinterest_share_button.png);
+    }
+
+    .supersocialshare.bubble.sss-dark .sb_network_button.email {
+        background-image:url(../images/dark/2x/bubble_email_share_button.png);
+    }
+}

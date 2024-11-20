@@ -1,0 +1,143 @@
+div.InfoAreaRis-img {width:29px;padding:6px;}
+#LoginAreaRis {font-family:Arial;font-size:11px;border:0px #DDD dashed;margin:0;line-height: 20px;width:100%;padding:5px;}
+#LoginAreaRis .titolo{font-size: 14px;color: gray;text-align: center;}
+#LoginAreaRis .loginarearis-username {width:80px;text-align: right;display: none;}     
+#LoginAreaRis .loginarearis-password {width:80px;text-align: right;display: none;}
+#LoginAreaRis .theInput{font-family:Arial;font-size:10px;width:134px;border:1px gray solid;height: 13px; color:#CDCDCD;}
+#LoginAreaRis .theSubmit{font-family:Arial;font-size:11px;color:black;border:1px gray solid;height:18px;}
+#LoginAreaRis .arearis-login {background-image: url(../css/images/btn-red-55.png);cursor: pointer;color:#FFF;font-weight: bold;width:58px;height: 23px;background-repeat: no-repeat;border: 0px;padding:0px;background-position: 0px 3px;background-color: transparent;overflow: hidden;margin-top:5px;margin-bottom:10px;}
+#LoginAreaRis .arearis-login:hover {color:#CCC;}
+#LoginAreaRis .registrati{padding:0px;margin:0px;border:0;background-color: transparent;text-decoration: underline;color:#E8661A;cursor:pointer;text-align: center;margin-top:8px;}
+#LoginAreaRis .registrati:hover{text-decoration: underline}
+#LoginAreaRis .password-dimenticata{width:120px;padding:0px;margin:0px;border:0;background-color: transparent;text-decoration: none;cursor:pointer;color: gray;text-align: center;padding-left:0px;padding-right:0px;width:120px;margin-left:10px;}
+#LoginAreaRis .password-dimenticata:hover{text-decoration: underline}
+#LoginAreaRis .pwdSend-istruzioni {text-align: left;line-height: 14px;color:#FFFFFF;padding-left:3px;font-weight: bold;margin-bottom:5px;padding-right:15px;}
+#LoginAreaRis .rsPwdSend {position: absolute;background-color: #C06371;border: 2px #CCC solid;width:225px;margin-left:-98px;padding:10px;margin-top:4px;z-index: 999999999;}
+#LoginAreaRis .rsPwdSend .theSubmit {font-family:Arial;font-size:11px;color:black;margin-right:5px;border:1px gray solid;height:18px;margin-top:2px;float:right;}
+#LoginAreaRis .rsPwdSend {color:#FFFFFF;}
+#LoginAreaRis .pwdSend-close {position:absolute;width:15px;height:15px;background-image: url(images/dialog-close.png);background-repeat: no-repeat;cursor: pointer;margin-left:217px;margin-top:-5px;}
+#LoginAreaRis .pwdSend-container {padding:0px;margin:0px;display: inline;overflow: hidden;}
+                                          
+#cmbpwd {display: none;margin-left:0px;background-color: #EEE;color:#000000;border:2px solid #777777;font-family:Arial;font-size:10px;text-align:left;padding:8px;margin-top:0px;position: absolute;z-index: 999999999;}
+#cmbpwd .theInput {font-family:Arial;font-size:11px;width:130px;margin-right:5px;display: block;margin-top:3px;margin-bottom:3px;}
+#cmbpwd .theSubmit {margin-top:6px;font-family:Arial;font-size:10px;color:black;margin-right:5px;border:1px gray solid;height:18px;}
+#cmbpwd .theClose {margin-top:6px;font-family:Arial;font-size:10px;color:black;margin-right:5px;border:1px gray solid;height:18px;}
+
+#InfoAreaRis {margin:0px;padding:0px;padding-top:6px;width:215px;}
+#InfoAreaRis p {padding:0px; margin:4px;font-size:11px; color:#AAAEA9; font-weight:normal;margin-bottom:0px;}
+#InfoAreaRis p span{padding:0px; margin:0px; color:#000;display: inline;font-weight: bold;font-size:11px;margin-left:3px;}
+#InfoAreaRis p+p {padding:0px; margin:4px;font-size:11px; color:#AAAEA9; font-weight:normal;display:block;clear:both;line-height: 14px;}
+
+#InfoAreaRis .InfoAreaRis-profilo-sel a  {color:#D1212B;}   
+#InfoAreaRis .InfoAreaRis-documenti-sel a {color:#D1212B;}
+
+#InfoAreaRis ul {margin:0px; padding:0px; border:0; list-style:none;text-align: left;padding-top:5px;padding-left:5px;}
+#InfoAreaRis ul li {display: block; margin:0; padding:0 1px 0 1px; border-right:0px solid #999; color:#666; font-weight:normal;}
+#InfoAreaRis ul li a {padding:0 0px 0 0px; color:gray; font-weight:normal;font-size: 10px;font-family: arial;}
+#InfoAreaRis ul li a.logout:hover {color:#666;}
+#InfoAreaRis .logout {border:0px;}
+#InfoAreaRis .InfoAreaRis-profilo {}
+#InfoAreaRis .InfoAreaRis_p1 {display: none;}
+#InfoAreaRis .InfoAreaRis_p2 {display: none;}
+                                    
+#box{position:absolute;width:300px;height:80px;border:1px #660000 solid;background-color:#EEEEEE;z-index:10;filter:alpha(opacity=80); -moz-opacity:0.8;top:50%;left:50%;margin:-40px 0 0 -150px;display:block;text-align:center;padding:5px;line-height:14px;}
+#box div.ok{position:absolute;width:300px;height:60px;top:50%;left:50%;margin:-30px 0 0 -150px;display:block;text-align:center;font-size:12px;font-weight:bold;color:black;overflow:auto;}
+#box div.ok p{padding:0px;margin:0px;}
+#box span{position:relative;top:58px;left:125px;}
+#box span a{font-size:10px;color:#292E5D;text-decoration:none;}
+#box span a:hover{color:#800000;}
+
+#fotogallery {text-align: center;padding-bottom:0px;margin-left: auto;margin-right: auto;width:637px;padding-left:3px;padding-top:3px;}
+#fotogallery table {border-spacing: 0px;border-collapse: collapse;}
+#fotogallery table tr {padding:0px;margin:0px;overflow: hidden;}
+#fotogallery table tr td{vertical-align: middle;text-align: left;margin:0px;padding:5px;padding-bottom:0px;overflow: hidden;min-height: 0px;min-width: 0px;width: auto;height: auto;}
+#fotogallery table tr td a {}
+#fotogallery img {border:0px;margin:0px;padding:0px;}
+#fotogallery img.fotogallery-foto{width:200px;height: 150px;}
+#fotogallery img.fotogallery-shadow{width:200px;margin-top:-4px;float:left;}
+#fotogallery img.fotogallery-foto:hover {}
+#fotogallery div{}
+#fotogallery .didascalia{text-align:center;background-color:transparent;border:0px red solid;font-size: 9px;line-height: 15px;}
+#fotogallery a:hover {text-decoration: underline;}
+#fotogallery div.fotogallery-overlayer {width:200px;height:151px;position:absolute;margin-top:-153px;background-color: #000;display: none;}
+
+#fotogallery.fromstruttura {text-align: center;margin-left:auto;margin-right:auto;width:820px;}
+#fotogallery.fromstruttura table {margin-left:auto;margin-right:auto;width:800px;}
+#fotogallery.fromstruttura table tr td{border:0px red solid;width: 151px;height:141px;padding-left:5px;padding-right:5px;padding-bottom:10px;vertical-align: top;padding-top:0px;text-align: center;text-align: center;}
+#fotogallery.fromstruttura img{max-height: 141px;max-width: 151px;width: auto;height: 141px;border:2px #FDCCFE solid;}
+#fotogallery.fromstruttura img:hover {border:2px #FDCCFE solid;}
+#fotogallery.fromstruttura div{}
+#fotogallery.fromstruttura .didascalia{text-align:center;background-color:transparent;border:0px red solid;font-size: 14px;padding-top:0px;font-weight: normal;cursor: pointer; font-family: Arial}
+#fotogallery.fromstruttura .fromstruttura-prezzo {padding-bottom:3px;background-color:transparent;border:0px red solid;}
+#fotogallery.fromstruttura .fromstruttura-sconto {font-size: 14px;color: #58BA47;font-weight: bold;background-color:transparent;border:0px red solid;display: none;}
+#fotogallery.fromstruttura a {text-decoration: none;color:#CB57A8;}
+#fotogallery.fromstruttura a:hover {text-decoration: none;color:#F632FD;}
+
+a.jScrollArrowUp{background-image:url(images/arrow_up.png);background-position:-5px 0px;background-repeat:no-repeat;}
+a.jscrollArrowUp:hover{}
+a.jScrollArrowDown{background-image:url(images/arrow_down.png);background-position:2px 2px;background-repeat:no-repeat;}
+a.jscrollArrowDown:hover{}
+
+/**** MENU LINGUE*********/
+#lingue {}
+#lingue span {background-repeat: no-repeat;padding-left:18px;background-position: 0px 2px;}
+#lingue ul {padding:0px;margin:0px;}
+#lingue ul li {display: inline;margin: 0;padding: 0;list-style-type: none;padding-left:0px;padding-right:0px;}
+#lingue ul li a {text-decoration: none;padding:8px;}
+#lingue ul li a:hover {padding:8px;background-image: url(images/bagliore-bandiere.png);background-repeat: no-repeat;background-position: 1px 3px;}
+#lingue ul li a.selected {padding:8px;background-image: url(images/bagliore-bandiere.png);background-repeat: no-repeat;background-position: 1px 3px; }
+/**** MENU LINGUE*********/
+
+#responseform {margin-top:10px; font-size: 10px;color: #FFF;line-height: 12px;padding:5px;border: 1px gray solid;background-color: #193908;background-image: url(images/warning.png);background-repeat: no-repeat;padding-left: 45px;background-position: 5px;margin-right:20px;margin-left:20px;display:none;}
+#responseform a {color:#FFFFFF;}
+
+div.rsUpdateProfilo {}
+div.rsUpdateProfilo-left {width:290px;padding-top:8px;}
+div.rsUpdateProfilo-row {padding-top:2px;padding-bottom:2px;}
+div.rsUpdateProfilo-row-l {width: 120px;font-weight: bold;text-align: right;padding-right:30px;border:0px red solid;}
+div.rsUpdateProfilo-form {border-left: 1px #CCCCCC dashed;}
+div.rsUpdateProfilo-form input, div.rsUpdateProfilo-form select {width:150px;}
+div.rsUpdateProfilo-form .rsForm-data select.-giorno {width: 40px;min-width:0px;}
+div.rsUpdateProfilo-form .rsForm-data select.-mese {width: 40px;min-width:0px;}
+div.rsUpdateProfilo-form .rsForm-data select.-anno {width: 52px;min-width:0px;}
+div.rsUpdateProfilo-form .rsForm-submit input {width: auto;}
+
+.rsDisabled a {color:gray;}
+.rsDisabled a:hover {color:gray;}
+.rsDisabled input {color:gray;}
+.rsDisabled select {color:gray;}
+
+div.briciole {margin-bottom:15px;margin-top:0px;color:;}
+div.briciole-share-container {padding-top: 0px;padding-bottom:5px;color: #AAAEA9;font-size: ;}
+div.briciole-share-container a {color: #B75BA6;font-size: ;text-decoration: none;}
+div.briciole-share-container a:hover {color: #F632FD;}
+div.briciole-left {margin-top:0px;float:left;width:350px;}
+span.briciole-left-last {color:#B75BA6;font-size:;font-weight: normal;text-transform: uppercase;}
+span.briciole-left-codart {color:#58BA47;}
+div.briciole-share {color:gray;float: right;}
+div.briciole-share-content {width:250px;float: right;font-size: 14px;}
+div.briciole-share-fb {width:19px;}
+div.briciole-share-fb img {cursor: pointer;}
+div.briciole-share-twitter img {cursor: pointer;}
+div.briciole-share-twitter {width:18px;}
+div.briciole-share-segnala {width:21px;}
+div.briciole-share-fb-container {width:75px;}
+div.briciole-share-twitter-container {width:60px;}
+div.share-label {padding-bottom:3px;padding-top:1px;}
+
+div.fumetto {color:#000;font-family: comic Sans MS;font-size: 11px;line-height: 14px;}
+
+div.rsVideoGallery-container table {width:100%;}
+td.rsVideoGallery-td {vertical-align: top;}
+div.rsVideoGallery {padding-bottom:15px;}
+div.rsVideoGallery-titolo {font-weight: bold;padding-bottom: 10px;}
+div.rsVideoGallery-sx {text-align: left;width:95px;}
+div.rsVideoGallery-dx {padding-left:10px;}
+
+.ificon-marker{color:#FFFFFF;width:66px;height:72px;font-size:24px;}
+.cluster{color:#FFFFFF;text-align:center;font-family:'Arial,Helvetica';font-size:11px;font-weight:bold;}
+.cluster-1{background-image:url(images/cluster-1.png);line-height:53px;width:53px;height:52px;}
+.cluster-2{background-image:url(images/cluster-2.png);line-height:53px;width:56px;height:55px;}
+.cluster-3{background-image:url(images/cluster-3.png);line-height:66px;width:66px;height:65px;}
+
+.crt-caratteristiche-aff-sel {border:2px solid red;}

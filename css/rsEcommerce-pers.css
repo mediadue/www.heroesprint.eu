@@ -1,0 +1,74 @@
+/* PERSONALIZZAZIONE ECOMMERCE */
+
+/* PULSANTI ACQUISTA, REGISTRATI, LOGIN */
+#ecomm_riepilogo .ecomm_registrazione table tr td input.submit{background-image: url(images/btn_general.png);color: #FFF;padding: 0px;}
+#ecomm_riepilogo .ecomm_registrazione table tr td input.submit:hover {background-image: url(images/btn_general_hover.png);padding: 0px;}
+
+/* PULSANTE ACCEDI AREA RISERVATA */
+#ecomm_riepilogo #LoginAreaRis input.theSubmit{margin-top:3px;font-family:Verdana;font-size:10px;border:0px;width:58px;height: 23px;background-image: url(images/btn-red.png);background-repeat: no-repeat;background-color: transparent;color:#FFF;}
+#ecomm_riepilogo #LoginAreaRis input.theSubmit:hover {background-image: url(images/btn-red.png);}
+
+/* BARRA SUPERIORE modifica, descrizione, totale */
+#ecomm_riepilogo tr.head {font-size: 11px;background-image: url(images/img-bar.png);}
+#ecomm_riepilogo tr.head td {color:#FFFFFF;}
+#ecomm_riepilogo td.separator div {font-size: 11px;color:gray;background-image: url(images/img-bar.png);}
+
+/* COLORE DEL TESTO DELLA TABELLA DI RIEPILOGO */
+#ecomm_riepilogo {}
+
+/* COLORE DEL TESTO DEL FORM DI REGISTRAZIONE */
+#ecomm_riepilogo_acquista {color:#000;font-size: 11px;}
+#ecomm_riepilogo_dati {color: #000;}
+
+/* PULSANTI AGGIUNGI AL CARRELLO */
+div.ecomm_carrello div.crt-aggiungi-al-carrello {background-image: url(images/add-cart_hover.png);color:#15542A;font-size:22px;font-weight: bold;padding-left:76px;padding-top:15px;} 
+div.ecomm_carrello div.crt-aggiungi-al-carrello:hover {background-image: url(images/add-cart_hover2.png);color:green;} 
+div.ecomm_carrello div.crt-aggiorna-il-carrello {background-image: url(images/aggiungi_al_carrello.png);color:#15542A;font-size:11px;font-weight: bold;padding-left:36px;}
+div.ecomm_carrello div.crt-aggiorna-il-carrello:hover {background-image: url(images/aggiungi_al_carrello_h.png);color:#15542A;}
+div.ecomm_carrello div.crt-prezzo-scontato {color:#333;margin-top:12px;font-family: MyHelvetica;font-size: 48px;}
+
+/* ICONA INFORMAZIONI PREZZO */
+div.crt-prezzo-info {display: none;}
+
+/*  DIMENSIONI COLONNE */
+div.ecomm_carrello div.crt-col-one {width: 420px;}
+div.ecomm_carrello div.crt-col-two {}
+
+/* VARIE */
+div.ecomm_carrello div.crt-caratteristiche-nome {color: #646464;font-weight: bold;}
+div.crt-articolo-descrizione {line-height: 13px;}
+div.ecomm_carrello div.crt-prezzi-container {border-bottom: 0px;border-top:0px;}
+div.ecomm_carrello .crt-addtocart-container {padding-left:30px;}
+/* ARTICOLI CONSIGLIATI VERTICALE */
+/*
+div.ecomm_carrello .crt-articoli-successivi {margin-left:0px; background-color:none;overflow: hidden;border:0px red solid;text-align: center;margin-top:11px;}
+div.ecomm_carrello .crt-articoli-successivi-label {padding-bottom: 10px;text-align: center;font-weight: bold;font-size: 11px;border:0px red solid;}
+div.ecomm_carrello .crt-articoli-successivi .dragmeParent{position:relative;overflow: hidden;margin-top:20px;margin-bottom:20px;height: 200px;border:0px red solid;}
+div.ecomm_carrello .crt-articoli-successivi .dragme{position:relative;}
+div.ecomm_carrello .crt-articoli-successivi .arrow-right{height:15px;margin-left:0px;border:0px red solid;text-align: center; cursor: pointer;}
+div.ecomm_carrello .crt-articoli-successivi .arrow-left{height:15px;margin-left:0px;border:0px red solid;text-align: center; cursor: pointer;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery {overflow: hidden;display: inline;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery img {margin:0px;padding:1px;width:60px;height: auto;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery img:hover {}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td {text-align: center;padding-left:5px;padding-right:5px;vertical-align: top;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td:hover {background-color: transparent;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td.selected .didascalia {color:red;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery .didascalia {text-align:center;border: 0px red solid;font-size: 10px;line-height: 10px;cursor:pointer;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery .didascalia:hover {text-decoration: underline;}
+*/
+
+/* ARTICOLI CONSIGLIATI ORIZZONTALE */
+div.ecomm_carrello .crt-articoli-successivi {margin-left:0px; background-color:none;overflow: hidden;border:0px red solid;text-align: center;margin-top:11px;}
+div.ecomm_carrello .crt-articoli-successivi-label {padding-bottom: 10px;text-align: center;font-weight: bold;font-size: 11px;border:0px red solid;border-top:1px #EFD3D6 solid;padding-top:10px;}
+div.ecomm_carrello .crt-articoli-successivi .dragmeParent{position:relative;overflow: hidden;width: 200px;border:0px red solid;}
+div.ecomm_carrello .crt-articoli-successivi .dragme{position:relative;width:100%;}
+div.ecomm_carrello .crt-articoli-successivi .arrow-right{height:24px;border:0px red solid;text-align: center; cursor: pointer;padding-top:25px;}
+div.ecomm_carrello .crt-articoli-successivi .arrow-left{height:24px;width:35px;border:0px red solid;text-align: center; cursor: pointer;padding-top:25px;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery {overflow: hidden;display: inline;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery img {margin:0px;padding:1px;width:60px;height: auto;margin-left:5px;margin-right:5px;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery img:hover {}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td {text-align: center;padding-left:0px;padding-right:0px;vertical-align: top;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td:hover {background-color: transparent;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery table tr td.selected a {color:red;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery .didascalia {text-align:center;border: 0px red solid;font-size: 10px;line-height: 10px;cursor:pointer;}
+div.ecomm_carrello .crt-articoli-successivi #fotogallery .didascalia:hover {text-decoration: underline;}

@@ -1,0 +1,153 @@
+FUTURE SHOCK DATE SELECTOR
+--------------------------
+
+PRODUCT:    FS JavaScript Popup Date Selector - version 3.11 free
+COPYRIGHT:  July 2004 (c) Future Shock Ltd.
+CONTACT:    post@future-shock.net
+COMPATIBILITY:
+    PC (WinXP): Internet Explorer 4/5/5.5/6/7, Netscape 4.78/7, Mozilla Firefox 1.04, Opera 7.53
+    Mac (OS9):  Internet Explorer 5.1, Netscape 7.1
+    Mac (OSX):  Internet Explorer 5.2, Netscape 7.2, Mozilla Firefox 1.04, Safari (please see note at bottom of this file)
+LIMITATIONS:
+    Netscape 4, Internet Explorer 4, and Safari are run in legacy mode - they do not display the date selector
+    popup but instead provide a standard type-in which validates any textual input made by the user.
+    Internet Explorer 4 on PC has a problem displaying more than two date selectors on one page.
+
+This product is freeware: you may use it on as many sites as you like, but you may not make any changes either to the script or to this copyright notice.
+The licensed version, which allows you to set the range of dates which may be selected yourself, and which contains no link to Future Shock, is available from http://software.future-shock.net
+
+
+A:  EASY INSTALLATION FOR NOVICE WEBMASTERS
+-------------------------------------------
+
+1.  Upload all of the folders in this zip file to your website - put them in the same folder as the page to which you want to add Date Selector.
+
+2.  Add these lines to your web page:
+
+    <SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect.js"></SCRIPT>
+    <LINK REL="stylesheet" HREF="styles/FSdateSelect.css" type="text/css">
+
+    The lines should both be placed somewhere between the <HEAD></HEAD> tags.
+
+3.  Make sure there are <FORM> and </FORM> tags on the page. Add NAME="DateForm" to your <FORM tag  i.e. <FORM NAME="DateForm">
+
+4.  Copy and paste the following line of code to the place in your page where you want the date select box to appear (make sure that it is somewhere in between the <FORM> and </FORM> tags):
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/")</SCRIPT>
+
+    The name of the field in this example, is "MyDate". If your date field needs to have a different name, then change "MyDate" to whatever name you like (ensure that this name does not contain any spaces).
+
+5.  If you want your dates in US format (MM/DD/YYYY), then change the line created at stage 3 above to:
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/","US")</SCRIPT>
+
+
+B:  SLIGNTLY MORE ADVANCED INSTRUCTIONS
+---------------------------------------
+
+1.  Upload the files in the images, scripts and styles folders to an appropriate location on your website.
+
+2.  Copy these lines to the head of your webpage and change the paths to reflect the location of the files:
+
+    <SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect.js"></SCRIPT>
+    <LINK REL="stylesheet" HREF="styles/FSdateSelect.css" type="text/css">
+
+    The lines should both be placed somewhere between the <HEAD></HEAD> tags.
+
+3.  Make sure there is a form on the page. Ensure that this FORM has a NAME attribute ("DateForm" has been used in the example page)
+
+4.  Copy and paste the following line of code to the place in your page where you want the date select box to appear (make sure that it is somewhere in between the <FORM> and </FORM> tags):
+
+    <SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/")</SCRIPT>
+
+    Change "DateForm" to the name of your form (ensure that this name does not contain any spaces). Also change "images/FSdateSelector/" to the path of the Date Selector images on your website.
+
+    If your date field needs to have a different name, then change "MyDate" to whatever name you like (ensure that this name does not contain any spaces).
+
+5.  Further configure your Date Selector using the optional parameters of the function call (detailed below). You can use these parameters to change the language and date format, to limit selection of dates to a specified range, and to control how the selector is displayed.
+
+
+C:  TO ADD MORE THAN ONE DATE SELECTOR TO THE SAME FORM
+-------------------------------------------------------
+
+You can add any number of Date Selector fields to your form - just make sure each one has a different FieldName. Note that pages may fail to display in Internet Explorer 4 where more than two Date Selectors are present; this appears to be a bug in this specific browser for which there is no known resolution.
+
+
+D:  FUNCTION CALL PARAMETERS
+----------------------------
+
+FSfncWriteFieldHTML(FormName,FieldName,FieldValue,FieldWidth,ImagePath,LangID,DisableNone,UseOnClick,ValidStartDate,ValidEndDate,HposOffset,VposOffset,onChangeDateAction)
+
+IMPORTANT! The ValidStartDate, ValidEndDate, and onChangeDateAction parameters have no effect in the free version of the Date Selector - they are only included to maintain code compatibility between the two versions.
+
+All parameters from LangID onward are optional, therefore the following is the minimum call required to create a Date Selector:
+
+<SCRIPT LANGUAGE="JavaScript">FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/")</SCRIPT>
+
+An example using all available parameters is (split onto three lines for readability):
+
+<SCRIPT LANGUAGE="JavaScript">
+FSfncWriteFieldHTML("DateForm","MyDate","01/01/2004",100,"images/FSdateSelector/","EN",true,true,"10/10/2002","9/10/2004",99,-16,"alert('hi')")
+</SCRIPT>
+
+1.	FormName: must match the NAME attribute of the FORM element that contains the Date Selector, it must be unique and not contain spaces.
+
+2.	FieldName: specifies the NAME of the form field that will store your date when the form is submitted, must be unique and not contain spaces.
+
+3.  FieldValue: specifies a default value for the date when the page is loaded. This must be in a valid format for the language specified, eg. DD/MM/YYYY for British English or MM/DD/YYYY for US English. You can also specify the following null values:
+
+    a. 'None' for English
+    b. 'Aucune' for French
+    c. 'Kein' for German
+    d. 'Ninguna' for Spanish
+
+4.  FieldWidth: specifies the width of the Date Selector in pixels.
+
+5.  ImagePath: defines the path to the folder containing the Date Selector images.
+
+6.  LangID: specifies the language in which the Date Selector will be displayed; the following two/four letter codes are available:
+
+    a. 'EN' for International English
+    b. 'US' for English with US format dates
+    c. 'DE' for German
+    d. 'FR' for French
+    e. 'ES' for Spanish
+    f. 'ESUS' for Spanish with US format dates
+
+7.  DisableNone: when true this disables the ability for users to set a date to null by clicking the button in the bottom right-hand corner of the Date Selector. The only valid settings for this parameter are true and false.
+
+8.  UseOnClick: when true the Date Selector is displayed when the user clicks the calendar icon. Normal behaviour is to display when the mouse cursor moves over the icon. The only valid settings for this parameter are true and false.
+
+9.  ValidStartDate and ValidEndDate: set both these parameters to limit selection of dates to a restricted range. Both dates must be in a format valid for the language specified (eg. DD/MM/YYYY for British English or MM/DD/YYYY for US English).
+
+10. HposOffset and VposOffset: the display position of the Date Selector can be controlled by setting these parameters, which must be positive or negative whole numbers (no decimal points). For example, to display the Date Selector 20 pixels higher than usual and 100 pixels further to the right, you would use the following:
+
+    FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/","EN",true,true,false,false,100,-20)
+
+    Notice that the ValidStartDate and ValidEndDate have been set to false so that no limiting date range is applied.
+
+11.	onChangeDateAction: specifies further JavaScript code to execute when the user selects a date; for example the following will popup a message box when the user selects a date:
+
+    FSfncWriteFieldHTML("DateForm","MyDate","None",100,"images/FSdateSelector/","EN",true,true,false,false,0,0,"alert('changed')")
+
+
+E:  DOCUMENT ENCODING ISSUES
+----------------------------
+
+The main JavaScript file for the Date Selector is saved in standard ANSI format, which means that it will work with any HTML document that has either declared a Content-Type of utf-8 or has made no declaration. Content Type is usually declared using a META tag in the HEAD secrtion of your HTML dpocument as follows:
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+
+If you are using a UTF-8 content type then you will need to use the version of the JavaScript file that is saved in a compatible format. For example, if your HTML contains the following META tag in the HEAD:
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=UTF-8">
+
+Then you should change the SCRIPT tag that loads the external JavaScript file to:
+
+<SCRIPT LANGUAGE="JavaScript" SRC="scripts/FSdateSelect-UTF8.js"></SCRIPT>
+
+
+F: SAFARI SUPPORT
+-----------------
+
+Safari is the only browser we have yet discovered that cannot understand the encryption used to protect our JavaScript code. This may improve with post 1.3.1 versions (it is currently a very unfinished piece of software). If you absolutely need the Date Selector to work in Safari, we have included specially encypted versions of our JavaScript in the scripts folder - please note that these are 47KB as opposed to 18KB for the normally encrypted scripts.
