@@ -1910,6 +1910,16 @@ function Table1ByTable2($table1,$table2,$table2_value,$table1_where,$order,$filt
   return $rs;
 }
 
+function query($sql) {
+    $objUtility = new Utility;
+    
+    $query = mysql_query ($sql);
+    if(!$query) return FALSE;
+    
+    $rs = $objUtility->buildRecordset($query);
+    return $rs;
+}
+
 function getTable($table,$ordinamento="",$where="",$extra="",$filterTheme=true) {
   global $config_table_prefix;
   $objUtility = new Utility;
@@ -2221,6 +2231,22 @@ function retName($id) {
   $rs=mysql_fetch_array($query);
 
   return($rs['originalname']);
+}
+
+if (!function_exists('array_column')) {
+    function array_column(array $input, $columnKey, $indexKey = null) {
+        $result = array();
+        foreach ($input as $row) {
+            if (isset($row[$columnKey])) {
+                if ($indexKey !== null && isset($row[$indexKey])) {
+                    $result[$row[$indexKey]] = $row[$columnKey];
+                } else {
+                    $result[] = $row[$columnKey];
+                }
+            }
+        }
+        return $result;
+    }
 }
 
 function convertToJpg($file,$addObject="",$absolute=""){

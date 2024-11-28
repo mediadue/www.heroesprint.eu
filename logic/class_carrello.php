@@ -3660,6 +3660,300 @@ class Carrello {
     return ln($mess_conferma['testo_editor']);  
   }
   
+  function setCaratteristiche($id){
+    $tid=array();
+    $or_id= $id;
+    
+    $id=explode("#", $id);
+    $caratteristica=retRow("ecommerce_caratteristiche",$id[0]);
+    
+    $ewiz_caratteristiche_list=retRow("ewiz_caratteristiche_list",$caratteristica['id_ewiz_caratteristiche_list']);
+    $ecommerce_tipologie=retRow("ecommerce_tipologie",$ewiz_caratteristiche_list['id_ecommerce_tipologie']);
+    $caratteristica_nome="id#".$caratteristica['id'];
+    
+    //echo $or_id . " - " . $ecommerce_tipologie['auto'];exit;
+    
+    $id=$id[1];
+    
+    if($ecommerce_tipologie['auto']==0) {
+      $tid=explode(";", $id);
+    } else {
+      if($id=="true") {
+        $tid=getTable("ecommerce_valori","","idcaratteristiche_hidden='".$caratteristica['id']."'");
+        $tid2=$tid[0]['id'];
+        $tid=array();
+        array_push($tid,$tid2);  
+      }  
+    }
+    
+    
+    $this->setDataByVal($caratteristica_nome,$id); 
+    
+    $aggiunta=0;
+    $aggiuntaf=0;
+    $aggiuntaq=0;        
+    $aggiunta_p=0;
+    $gallery=array();
+    $abbinamenti=array();
+    
+    if($ecommerce_tipologie['id']=="8"){
+      $aggiunta=0;
+      $aggiuntaf=0;
+      $aggiuntaq=0;          
+      
+      $this->setQuantita($id);
+      
+      if($id>0) {
+        $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
+
+        $v1=parseToFloat($valori[0]['nome']);
+        $v2=parseToFloat($valori[1]['nome']);
+        if($v2>$id) $v2=$id;
+        
+        $p1=(float)$valori[0]['differenza_prezzo_cry'];
+        $p2=(float)$valori[1]['differenza_prezzo_cry'];
+        
+        $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
+        $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
+        
+        $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
+        $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];                        
+        
+        $peso1=(float)$valori[0]['differenza_peso'];
+        $peso2=(float)$valori[1]['differenza_peso'];
+        
+        if($v2-$v1!=0){
+          $m=($p2-$p1)/($v2-$v1);
+          $mf=($pf2-$pf1)/($v2-$v1);
+          $mq=($pq2-$pq1)/($v2-$v1);
+          $mp=($peso2-$peso1)/($v2-$v1);
+          
+          $aggiuntaf=(($id-$v1)*$mf)+$pf1;
+          $aggiuntaq=(($id-$v1)*$mq)+$pq1;
+          $aggiunta_p=(($id-$v1)*$mp)+$peso1;
+          $aggiunta=(($id-$v1)*$m)+$p1;
+        }
+      }
+    }
+    
+    if($ecommerce_tipologie['id']=="10"){
+      $aggiunta=0;
+      $aggiuntaf=0; 
+      $aggiuntaq=0;          
+      $aggiunta_p=0;
+      
+      $this->setQuantita($id);
+      
+      if($id>0) {
+        $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
+
+        $v1=parseToFloat($valori[0]['nome']);
+        $v2=parseToFloat($valori[1]['nome']);
+        
+        $p1=(float)$valori[0]['differenza_prezzo_cry'];
+        $p2=(float)$valori[1]['differenza_prezzo_cry'];
+        
+        $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
+        $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
+        
+        $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
+        $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];            
+                    
+        $peso1=(float)$valori[0]['differenza_peso'];
+        $peso2=(float)$valori[1]['differenza_peso'];
+        
+        if($v2-$v1!=0) $m=($p2-$p1)/($v2-$v1);
+        if($v2-$v1!=0) $m1=($peso2-$peso1)/($v2-$v1);
+        
+        if($v2-$v1!=0) $mf=($pf2-$pf1)/($v2-$v1);
+        if($v2-$v1!=0) $mq=($pq2-$pq1)/($v2-$v1);
+        
+        $aggiuntaf=(($id-$v1)*$mf)+$pf1;
+        $aggiuntaq=(($id-$v1)*$mq)+$pq1;
+        $aggiunta=(($id-$v1)*$m)+$p1;
+        $aggiunta_p=(($id-$v1)*$m1)+$peso1;
+      }
+    }
+    
+    if($ecommerce_tipologie['id']=="11" ){
+      $current=$this->getCurrent();
+      $art=retArticoloFromCat($current);
+      
+      $aggiunta=0;
+      $aggiuntaf=0;
+      $aggiuntaq=0;
+      $aggiunta_p=0;
+      $aggiuntaDimm=0;
+      $aggiuntaPerim=0;
+      
+      $this->setDimensioni($id);
+      $area=$this->retAreaByDim($id);
+      
+      //$aggiunta=(parseToFloat($art['Prezzo_cry']))-parseToFloat($art['Prezzo_cry']);
+      //$aggiunta_p=(parseToFloat($art['peso']))-parseToFloat($art['peso']);
+      $aggiunta=0;
+      $aggiunta_p=0;  
+    }
+    
+    if($ecommerce_tipologie['id']=="9" && $id!=""){
+      $current=$this->getCurrent();
+      $art=retArticoloFromCat($current);
+      
+      $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
+      $allowedSize=retMockupArray($valori[0]['Note_textarea']);
+  
+      $wmin=$allowedSize["wmin"];
+      $wmax=$allowedSize["wmax"];
+      $hmin=$allowedSize["hmin"];
+      $hmax=$allowedSize["hmax"];
+
+      $info = explode("*", $id);
+      
+      $w = (float)$info[0];
+      $h = (float)$info[1];
+      
+      if($w==0) $w=$wmin;
+      if($h==0) $h=$hmin;
+      
+      if($wmax==0) $wmax=$w;
+      if($hmax==0) $hmax=$h; 
+      
+      if($wmin==0) $wmin=$w;
+      if($hmin==0) $hmin=$h; 
+      
+      if($w>$wmax || $h>$hmax) {
+        $ratioh = $hmax/$h; 
+        $ratiow = $wmax/$w;
+      
+        $ratio = min($ratioh, $ratiow); 
+        // New dimensions 
+        $w = round($ratio*$w,1);
+        $h = round($ratio*$h,1); 
+      }elseif($w<$wmin || $h<$hmin){
+        $ratioh = $hmin/$h; 
+        $ratiow = $wmin/$w;
+        
+        $ratio = min($ratioh, $ratiow); 
+        // New dimensions 
+        $w = round($ratio*$w,1); 
+        $h = round($ratio*$h,1);     
+      }
+      
+      $diff_prz=(float)$valori[0]['differenza_prezzo_cry'];
+      $area = ($w/1000)*($h/1000); 
+      
+      $aggiunta=$diff_prz*$area;
+      
+      $id= $w . "*" . $h . "*" . $info[2];
+    }
+    
+    if($ecommerce_tipologie['id']=="5"){
+      if($id>0) {
+        $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
+
+        $v1=parseToFloat($valori[0]['nome']);
+        $v2=parseToFloat($valori[1]['nome']);
+        
+        $p1=(float)$valori[0]['differenza_prezzo_cry'];
+        $p2=(float)$valori[1]['differenza_prezzo_cry'];
+        
+        $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
+        $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
+        
+        $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
+        $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];
+        
+        $peso1=(float)$valori[0]['differenza_peso'];
+        $peso2=(float)$valori[1]['differenza_peso'];
+        
+        if($v2-$v1!=0) $m=($p2-$p1)/($v2-$v1);
+        if($v2-$v1!=0) $mf=($pf2-$pf1)/($v2-$v1);
+        if($v2-$v1!=0) $mq=($pq2-$pq1)/($v2-$v1);
+        if($v2-$v1!=0) $m1=($peso2-$peso1)/($v2-$v1);
+        $aggiuntaf=(($id-$v1)*$mf)+$pf1;
+        $aggiuntaq=(($id-$v1)*$mq)+$pq1;
+        $aggiunta=(($id-$v1)*$m)+$p1;
+        $aggiunta_p=(($id-$v1)*$m1)+$peso1;
+      }
+    }
+    
+    $current=$this->getCurrent();
+    $art=retArticoloFromCat($current);
+    $arrDim = explode("x", $this->getDimensioni());
+    $tw=$arrDim[0]/100;
+    $th=$arrDim[1]/100;
+    
+    while (list($key, $row) = each($tid)) {
+      $tmpaggiunta=retRow("ecommerce_valori",$row);
+      
+      $aggiunta=$aggiunta+(float)$tmpaggiunta['differenza_prezzo_cry'];
+      $aggiuntaf=$aggiuntaf+(float)$tmpaggiunta['differenza_prezzo_fissa_cry'];
+      $aggiuntaq=$aggiuntaq+(float)$tmpaggiunta['differenza_prezzo_quantita_cry'];
+      $aggiunta_p=$aggiunta_p+(float)$tmpaggiunta['differenza_peso'];
+      
+      if($tmpaggiunta['dimensioni_disponibili']!="") {
+        $tdd=$tmpaggiunta['dimensioni_disponibili'];
+        if(right($tdd,1)==";") $tdd=left($tdd,strlen($tdd)-1); 
+        $tdimArr=explode(";",$tdd);
+        
+        $diffPrez=(float)$tmpaggiunta['differenza_prezzo_cry'];
+        if($diffPrez==0) $diffPrez=(float)$art['Prezzo_cry'];
+        
+        $aggiuntaDimm=array();
+        $aggiuntaDimm['prezzo']=$diffPrez;
+        $aggiuntaDimm['dimArr']=$tdimArr;
+        $aggiuntaDimm['orDimW']=$tw;
+        $aggiuntaDimm['orDimH']=$th;
+        $aggiuntaDimm['orNomeCaratt']=$tmpaggiunta['nome'];
+      }
+      
+      if($tmpaggiunta['calcolo_perimetrale']=="1") {
+        $perim=($tw*2)+($th*2);
+        $aggiuntaPerim=$aggiunta*$perim;
+        $aggiunta=0;        
+      }
+      
+      $tmpfumetto.=tinybug(ln($tmpaggiunta['fumetto_editor']))."<br>";
+      $tmpgallery=Table2ByTable1("ecommerce_valori","fotogallery",$tmpaggiunta['id'],"attivo='1'","Ordinamento ASC");
+      $tmpabbinati=Table2ByTable1("ecommerce_valori","ecommerce_abbinamenti",$tmpaggiunta['id'],"attivo='1'","");
+      
+      array_unshift($tmpgallery, $tmpaggiunta);
+      while (list($key2, $row2) = each($tmpgallery)) {
+        if(retFile($row2['immagine_file'])) {
+          $tmpgallery2="<a href='".retFile($row2['immagine_file'],$this->g_zoomImgW)."' class='crt-fotogallery-thm cloud-zoom-gallery' title='' rel=\"useZoom: 'crt-foto-articolo-zoom', smallImage: '".retFile($row2['immagine_file'],$this->g_smallImgW)."'\"><img src='".retFile($row2['immagine_file'],$this->g_smallGalleryImgW)."' zoom='".retFile($row2['immagine_file'],$this->g_zoomImgW)."' valore='$caratteristica_nome' idvalore='$id' idcaratteristica='".$caratteristica['id']."' title='".$tmpaggiunta['nome']."' /></a>";
+          array_push($gallery, $tmpgallery2);
+        }
+      }
+      
+      while (list($key2, $row2) = each($tmpabbinati)) {
+        array_push($abbinamenti, $row2);
+      }
+    }
+    
+    if($ecommerce_tipologie['id']!="11") {
+      $tmpQ=$this->getArea();
+    }else{
+      $tmpQ=1; 
+    }
+    
+    if($tmpQ==0) $tmpQ=1;
+    
+    $gallery=implode("#AA#", $gallery);
+    $this->setAggiuntaPeso($caratteristica_nome,$aggiunta_p);
+    $this->setAggiunta($caratteristica_nome,$aggiunta);
+    $this->setAggiuntaF($caratteristica_nome,$aggiuntaf);
+    $this->setAggiuntaQ($caratteristica_nome,$aggiuntaq);
+    $this->setAggiuntaDim($caratteristica_nome,$aggiuntaDimm);
+    $this->setAggiuntaPerim($caratteristica_nome,$aggiuntaPerim);
+    
+    $this->updatePrezzi();
+    $newPrezzoSenzaSconto = $this->retData("ecomm_prezzo_senza_sconto");
+    $newPrezzoFinale = $this->retData("ecomm_prezzo_finale");
+    $newSconto = $this->retData("ecomm_sconto");
+    
+    return currencyITA(($aggiunta*$tmpQ*$this->getQuantita())+$aggiuntaf+($aggiuntaq*$this->getQuantita()))."#AA134#".$gallery."#AA134#"."<div class='fumetto'>".$tmpfumetto."</div>"."#AA134#".rawurlencode(serialize($abbinamenti))."#AA134#".$tmpaggiunta['richiedi_quotazione']."#AA134#".$newPrezzoSenzaSconto."#AA134#".$newPrezzoFinale."#AA134#".$newSconto."#AA134#".$id;
+  }
+  
   function action() {  
     if(isset($_POST['ecomm_ver_email'])) {
       $arrCampi=json_decode(stripslashes($_POST['ecomm_ver_email']),true);
@@ -3943,295 +4237,12 @@ class Carrello {
       }
              
       if($_POST['myRsCarrello']=="setCaratteristiche") {
-        $tid=array();
         $id=$_POST['value'];
         
-        if(strpos($id,"auto")===FALSE) {
-          $id=explode("#", $id);
-          $caratteristica=retRow("ecommerce_caratteristiche",$id[0]);
-          $id=$id[1];
-          $tid=explode(";", $id);
-        } else {
-          $id=explode("#", $id);
-          $caratteristica=retRow("ecommerce_caratteristiche",$id[0]);
-          $id=$id[1];
-          if($id=="true") {
-            $tid=getTable("ecommerce_valori","","idcaratteristiche_hidden='".$caratteristica['id']."'");
-            $tid2=$tid[0]['id'];
-            $tid=array();
-            array_push($tid,$tid2);  
-          }  
-        }
+        $ret = $this->setCaratteristiche($id);
         
-        $ewiz_caratteristiche_list=retRow("ewiz_caratteristiche_list",$caratteristica['id_ewiz_caratteristiche_list']);
-        $ecommerce_tipologie=retRow("ecommerce_tipologie",$ewiz_caratteristiche_list['id_ecommerce_tipologie']);
-        $caratteristica_nome="id#".$caratteristica['id'];
-        $this->setDataByVal($caratteristica_nome,$id); 
+        echo $ret;
         
-        $aggiunta=0;
-        $aggiuntaf=0;
-        $aggiuntaq=0;        
-        $aggiunta_p=0;
-        $gallery=array();
-        $abbinamenti=array();
-        
-        if($ecommerce_tipologie['id']=="8"){
-          $aggiunta=0;
-          $aggiuntaf=0;
-          $aggiuntaq=0;          
-          
-          $this->setQuantita($id);
-          
-          if($id>0) {
-            $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
-  
-            $v1=parseToFloat($valori[0]['nome']);
-            $v2=parseToFloat($valori[1]['nome']);
-            if($v2>$id) $v2=$id;
-            
-            $p1=(float)$valori[0]['differenza_prezzo_cry'];
-            $p2=(float)$valori[1]['differenza_prezzo_cry'];
-            
-            $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
-            $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
-            
-            $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
-            $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];                        
-            
-            $peso1=(float)$valori[0]['differenza_peso'];
-            $peso2=(float)$valori[1]['differenza_peso'];
-            
-            if($v2-$v1!=0){
-              $m=($p2-$p1)/($v2-$v1);
-              $mf=($pf2-$pf1)/($v2-$v1);
-              $mq=($pq2-$pq1)/($v2-$v1);
-              $mp=($peso2-$peso1)/($v2-$v1);
-              
-              $aggiuntaf=(($id-$v1)*$mf)+$pf1;
-              $aggiuntaq=(($id-$v1)*$mq)+$pq1;
-              $aggiunta_p=(($id-$v1)*$mp)+$peso1;
-              $aggiunta=(($id-$v1)*$m)+$p1;
-            }
-          }
-        }
-        
-        if($ecommerce_tipologie['id']=="10"){
-          $aggiunta=0;
-          $aggiuntaf=0; 
-          $aggiuntaq=0;          
-          $aggiunta_p=0;
-          
-          $this->setQuantita($id);
-          
-          if($id>0) {
-            $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
-  
-            $v1=parseToFloat($valori[0]['nome']);
-            $v2=parseToFloat($valori[1]['nome']);
-            
-            $p1=(float)$valori[0]['differenza_prezzo_cry'];
-            $p2=(float)$valori[1]['differenza_prezzo_cry'];
-            
-            $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
-            $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
-            
-            $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
-            $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];            
-                        
-            $peso1=(float)$valori[0]['differenza_peso'];
-            $peso2=(float)$valori[1]['differenza_peso'];
-            
-            if($v2-$v1!=0) $m=($p2-$p1)/($v2-$v1);
-            if($v2-$v1!=0) $m1=($peso2-$peso1)/($v2-$v1);
-            
-            if($v2-$v1!=0) $mf=($pf2-$pf1)/($v2-$v1);
-            if($v2-$v1!=0) $mq=($pq2-$pq1)/($v2-$v1);
-            
-            $aggiuntaf=(($id-$v1)*$mf)+$pf1;
-            $aggiuntaq=(($id-$v1)*$mq)+$pq1;
-            $aggiunta=(($id-$v1)*$m)+$p1;
-            $aggiunta_p=(($id-$v1)*$m1)+$peso1;
-          }
-        }
-        
-        if($ecommerce_tipologie['id']=="11" ){
-          $current=$this->getCurrent();
-          $art=retArticoloFromCat($current);
-          
-          $aggiunta=0;
-          $aggiuntaf=0;
-          $aggiuntaq=0;
-          $aggiunta_p=0;
-          $aggiuntaDimm=0;
-          $aggiuntaPerim=0;
-          
-          $this->setDimensioni($id);
-          $area=$this->retAreaByDim($id);
-          
-          //$aggiunta=(parseToFloat($art['Prezzo_cry']))-parseToFloat($art['Prezzo_cry']);
-          //$aggiunta_p=(parseToFloat($art['peso']))-parseToFloat($art['peso']);
-          $aggiunta=0;
-          $aggiunta_p=0;  
-        }
-        
-        if($ecommerce_tipologie['id']=="9" && $id!=""){
-          $current=$this->getCurrent();
-          $art=retArticoloFromCat($current);
-          
-          $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
-          $allowedSize=retMockupArray($valori[0]['Note_textarea']);
-      
-          $wmin=$allowedSize["wmin"];
-          $wmax=$allowedSize["wmax"];
-          $hmin=$allowedSize["hmin"];
-          $hmax=$allowedSize["hmax"];
-
-          $info = explode("*", $id);
-          
-          $w = (float)$info[0];
-          $h = (float)$info[1];
-          
-          if($w==0) $w=$wmin;
-          if($h==0) $h=$hmin;
-          
-          if($wmax==0) $wmax=$w;
-          if($hmax==0) $hmax=$h; 
-          
-          if($wmin==0) $wmin=$w;
-          if($hmin==0) $hmin=$h; 
-          
-          if($w>$wmax || $h>$hmax) {
-            $ratioh = $hmax/$h; 
-            $ratiow = $wmax/$w;
-          
-            $ratio = min($ratioh, $ratiow); 
-            // New dimensions 
-            $w = round($ratio*$w,1);
-            $h = round($ratio*$h,1); 
-          }elseif($w<$wmin || $h<$hmin){
-            $ratioh = $hmin/$h; 
-            $ratiow = $wmin/$w;
-            
-            $ratio = min($ratioh, $ratiow); 
-            // New dimensions 
-            $w = round($ratio*$w,1); 
-            $h = round($ratio*$h,1);     
-          }
-          
-          $diff_prz=(float)$valori[0]['differenza_prezzo_cry'];
-          $area = ($w/1000)*($h/1000); 
-          
-          $aggiunta=$diff_prz*$area;
-          
-          $id= $w . "*" . $h . "*" . $info[2];
-        }
-        
-        if($ecommerce_tipologie['id']=="5"){
-          if($id>0) {
-            $valori=getTable("ecommerce_valori","Ordinamento ASC","idcaratteristiche_hidden=".$caratteristica['id']);
-  
-            $v1=parseToFloat($valori[0]['nome']);
-            $v2=parseToFloat($valori[1]['nome']);
-            
-            $p1=(float)$valori[0]['differenza_prezzo_cry'];
-            $p2=(float)$valori[1]['differenza_prezzo_cry'];
-            
-            $pf1=(float)$valori[0]['differenza_prezzo_fissa_cry'];
-            $pf2=(float)$valori[1]['differenza_prezzo_fissa_cry'];
-            
-            $pq1=(float)$valori[0]['differenza_prezzo_quantita_cry'];
-            $pq2=(float)$valori[1]['differenza_prezzo_quantita_cry'];
-            
-            $peso1=(float)$valori[0]['differenza_peso'];
-            $peso2=(float)$valori[1]['differenza_peso'];
-            
-            if($v2-$v1!=0) $m=($p2-$p1)/($v2-$v1);
-            if($v2-$v1!=0) $mf=($pf2-$pf1)/($v2-$v1);
-            if($v2-$v1!=0) $mq=($pq2-$pq1)/($v2-$v1);
-            if($v2-$v1!=0) $m1=($peso2-$peso1)/($v2-$v1);
-            $aggiuntaf=(($id-$v1)*$mf)+$pf1;
-            $aggiuntaq=(($id-$v1)*$mq)+$pq1;
-            $aggiunta=(($id-$v1)*$m)+$p1;
-            $aggiunta_p=(($id-$v1)*$m1)+$peso1;
-          }
-        }
-        
-        $current=$this->getCurrent();
-        $art=retArticoloFromCat($current);
-        $arrDim = explode("x", $this->getDimensioni());
-        $tw=$arrDim[0]/100;
-        $th=$arrDim[1]/100;
-        
-        while (list($key, $row) = each($tid)) {
-          $tmpaggiunta=retRow("ecommerce_valori",$row);
-          
-          $aggiunta=$aggiunta+(float)$tmpaggiunta['differenza_prezzo_cry'];
-          $aggiuntaf=$aggiuntaf+(float)$tmpaggiunta['differenza_prezzo_fissa_cry'];
-          $aggiuntaq=$aggiuntaq+(float)$tmpaggiunta['differenza_prezzo_quantita_cry'];
-          $aggiunta_p=$aggiunta_p+(float)$tmpaggiunta['differenza_peso'];
-          
-          if($tmpaggiunta['dimensioni_disponibili']!="") {
-            $tdd=$tmpaggiunta['dimensioni_disponibili'];
-            if(right($tdd,1)==";") $tdd=left($tdd,strlen($tdd)-1); 
-            $tdimArr=explode(";",$tdd);
-            
-            $diffPrez=(float)$tmpaggiunta['differenza_prezzo_cry'];
-            if($diffPrez==0) $diffPrez=(float)$art['Prezzo_cry'];
-            
-            $aggiuntaDimm=array();
-            $aggiuntaDimm['prezzo']=$diffPrez;
-            $aggiuntaDimm['dimArr']=$tdimArr;
-            $aggiuntaDimm['orDimW']=$tw;
-            $aggiuntaDimm['orDimH']=$th;
-            $aggiuntaDimm['orNomeCaratt']=$tmpaggiunta['nome'];
-          }
-          
-          if($tmpaggiunta['calcolo_perimetrale']=="1") {
-            $perim=($tw*2)+($th*2);
-            $aggiuntaPerim=$aggiunta*$perim;
-            $aggiunta=0;        
-          }
-          
-          $tmpfumetto.=tinybug(ln($tmpaggiunta['fumetto_editor']))."<br>";
-          $tmpgallery=Table2ByTable1("ecommerce_valori","fotogallery",$tmpaggiunta['id'],"attivo='1'","Ordinamento ASC");
-          $tmpabbinati=Table2ByTable1("ecommerce_valori","ecommerce_abbinamenti",$tmpaggiunta['id'],"attivo='1'","");
-          
-          array_unshift($tmpgallery, $tmpaggiunta);
-          while (list($key2, $row2) = each($tmpgallery)) {
-            if(retFile($row2['immagine_file'])) {
-              $tmpgallery2="<a href='".retFile($row2['immagine_file'],$this->g_zoomImgW)."' class='crt-fotogallery-thm cloud-zoom-gallery' title='' rel=\"useZoom: 'crt-foto-articolo-zoom', smallImage: '".retFile($row2['immagine_file'],$this->g_smallImgW)."'\"><img src='".retFile($row2['immagine_file'],$this->g_smallGalleryImgW)."' zoom='".retFile($row2['immagine_file'],$this->g_zoomImgW)."' valore='$caratteristica_nome' idvalore='$id' idcaratteristica='".$caratteristica['id']."' title='".$tmpaggiunta['nome']."' /></a>";
-              array_push($gallery, $tmpgallery2);
-            }
-          }
-          
-          while (list($key2, $row2) = each($tmpabbinati)) {
-            array_push($abbinamenti, $row2);
-          }
-        }
-        
-        if($ecommerce_tipologie['id']!="11") {
-          $tmpQ=$this->getArea();
-        }else{
-          $tmpQ=1; 
-        }
-        
-        if($tmpQ==0) $tmpQ=1;
-        
-        $gallery=implode("#AA#", $gallery);
-        $this->setAggiuntaPeso($caratteristica_nome,$aggiunta_p);
-        $this->setAggiunta($caratteristica_nome,$aggiunta);
-        $this->setAggiuntaF($caratteristica_nome,$aggiuntaf);
-        $this->setAggiuntaQ($caratteristica_nome,$aggiuntaq);
-        $this->setAggiuntaDim($caratteristica_nome,$aggiuntaDimm);
-        $this->setAggiuntaPerim($caratteristica_nome,$aggiuntaPerim);
-        
-        $this->updatePrezzi();
-        $newPrezzoSenzaSconto = $this->retData("ecomm_prezzo_senza_sconto");
-        $newPrezzoFinale = $this->retData("ecomm_prezzo_finale");
-        $newSconto = $this->retData("ecomm_sconto");
-          
-        echo currencyITA(($aggiunta*$tmpQ*$this->getQuantita())+$aggiuntaf+($aggiuntaq*$this->getQuantita()))."#AA134#".$gallery."#AA134#"."<div class='fumetto'>".$tmpfumetto."</div>"."#AA134#".rawurlencode(serialize($abbinamenti))."#AA134#".$tmpaggiunta['richiedi_quotazione']."#AA134#".$newPrezzoSenzaSconto."#AA134#".$newPrezzoFinale."#AA134#".$newSconto."#AA134#".$id;
- 
         exit;
       }
       
@@ -5178,6 +5189,8 @@ class Carrello {
                 $idnome=onlyreadables($nome);
                 $combid="id#".$tmp_caratteristiche['id'];
                 $tipo=$tmp_caratteristiche['id_ecommerce_tipologie'];
+                $auto=$tmp_caratteristiche['auto'];
+                if($auto == 1) $auto = 'auto="1"'; else $auto="";
                 $ecommerce_valori=getTable("ecommerce_valori","Ordinamento ASC","(idcaratteristiche_hidden ='".$tmp_caratteristiche['id']."' AND attivo='1')");
                 $mockup_list=Table2ByTable1("ecommerce_caratteristiche","ecommerce_mockup_list",$tmp_caratteristiche['id'],"attivo=1","");
                 $tmpArrMockup=array();
@@ -5199,15 +5212,15 @@ class Carrello {
                         <div class="ez-box" >
                           <?php
                           if($tipo=="1") {
-                            ?><input style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text form-control" name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" /><?  
+                            ?><input style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text form-control" <?=$auto?> name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" /><?  
                           }
                   
                           if($tipo=="2") {
-                            ?><input ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="check" name="<?=$idnome?>" type="checkbox" id="<?=$tmp_valori['id']?>" value="true" class="checkbox" <?php if($combi_val[$combid]=="true") echo "checked"; ?> /><?  
+                            ?><input ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="check" <?=$auto?> name="<?=$idnome?>" type="checkbox" id="<?=$tmp_valori['id']?>" value="true" class="checkbox" <?php if($combi_val[$combid]=="true") echo "checked"; ?> /><?  
                           }
                           
                           if($tipo=="3" && count($ecommerce_valori)>0) { ?>
-                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" name="<?=$idnome?>" class="select form-control">
+                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>" class="select form-control">
                               <option value="" <?php if($combi_val[$combid]=="") echo "selected"; ?>>
                               <?php
                               while (list($key2, $tmp_valori) = each($ecommerce_valori)) {
@@ -5219,7 +5232,7 @@ class Carrello {
                           if($tipo=="4" && count($ecommerce_valori)>0) { 
                             $combi_val[$combid]=explode(";", $combi_val[$combid]);
                             ?>
-                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" name="<?=$idnome?>" class="select form-control" multiple>
+                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>" class="select form-control" multiple>
                               <option value="" <?php if(count($combi_val[$combid])==0) {echo "selected";} ?>>
                               <?php
                               while (list($key2, $tmp_valori) = each($ecommerce_valori)) {
@@ -5240,7 +5253,7 @@ class Carrello {
                             }
                             
                             ?>
-                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" auto="1" name="<?=$idnome?>" class="select form-control">
+                            <select style="width:<?php echo $width; ?>;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>" class="select form-control">
                               <option value="" <?php if($combi_val[$combid]=="") echo "selected"; ?>>
                               <?php
                               while (list($key2, $tmp_valori2) = each($buffer)) {
@@ -5253,7 +5266,7 @@ class Carrello {
                           if($tipo=="6" && count($ecommerce_valori)>0) { 
                             $combi_val[$combid]=explode(";", $combi_val[$combid]);
                             ?>
-                            <table caratteristica="<?=$tmp_caratteristiche['id']?>" auto="1" name="<?=$idnome?>">
+                            <table caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>">
                               <tr>
                                 <td>
                                   <div class="ez-wr crt-color-container" caratteristica="<?=$tmp_caratteristiche['id']?>">
@@ -5291,7 +5304,7 @@ class Carrello {
                           if($tipo=="7" && count($ecommerce_valori)>0) { 
                             $combi_val[$combid]=explode(";", $combi_val[$combid]); ?>
                             
-                            <div class="row row-eq-height crtp-caratteristiche-aff select-aff" inputcaratt=1 caratteristica="<?=$tmp_caratteristiche['id']?>" name="<?=$idnome?>">
+                            <div class="row row-eq-height crtp-caratteristiche-aff select-aff" inputcaratt=1 caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>">
                               <?php
                               while (list($key2, $tmp_valori) = each($ecommerce_valori)) { 
                                 $f="immagine_file";
@@ -5316,7 +5329,7 @@ class Carrello {
                           
                           if($tipo=="8") { 
                             if(!($combi_val[$combid]>0)) $combi_val[$combid]=1; ?>
-                            <input caratteristica="<?=$tmp_caratteristiche['id']?>" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" class="text crt-upd-q form-control" name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" />    
+                            <input caratteristica="<?=$tmp_caratteristiche['id']?>" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" class="text crt-upd-q form-control" <?=$auto?> name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" />    
                           <? }
                           
                           if($tipo=="11") { 
@@ -5332,7 +5345,7 @@ class Carrello {
                                 <label for="<?=$idnome?>_2"><?php echo ln("Altezza"); ?></label><br><input class="text crt-upd-dim2 form-control" name="<?=$idnome?>_2" type="text" id="" value="<?=$dimV[1]?>" max="<?=$maxS[1]?>" />
                               </div>
                             </div>
-                            <input style="width:<?php echo $width; ?>; display:none;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text crt-upd-dim" name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" />    
+                            <input style="width:<?php echo $width; ?>; display:none;" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text crt-upd-dim" <?=$auto?> name="<?=$idnome?>" type="text" id="<?=$tmp_valori['id']?>" value="<?=$combi_val[$combid]?>" />    
                           <? }
                           
                           if($tipo=="10" && count($ecommerce_valori)>0) {
@@ -5346,7 +5359,7 @@ class Carrello {
                             }
                             
                             ?>
-                            <select style="width:<?php echo $width; ?>;" class="crt-upd-q select form-control" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" auto="1" name="<?=$idnome?>">
+                            <select style="width:<?php echo $width; ?>;" class="crt-upd-q select form-control" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" <?=$auto?> name="<?=$idnome?>">
                               <option value="" <?php if($combi_val[$combid]=="") echo "selected"; ?>>
                               <?php while (list($key2, $tmp_valori2) = each($buffer)) { ?>
                                 <option value="<?=$tmp_valori2?>" <?php if($combi_val[$combid]==$tmp_valori2) echo "selected"; ?>><?=$tmp_valori2?>
@@ -5374,7 +5387,7 @@ class Carrello {
                                 </div>
                               </div>
                             </div>
-                            <input type="hidden" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text crt-upload-cmyk" name="<?=$idnome?>" id="<?=$ecommerce_valori[0]['id']?>" value="<?=$combi_val[$combid]?>" />    
+                            <input type="hidden" ecomm_is_val="1" ecomm_is_for_mockup="<?=$tmp_caratteristiche['is_for_mockup']?>" caratteristica="<?=$tmp_caratteristiche['id']?>" class="text crt-upload-cmyk" <?=$auto?> name="<?=$idnome?>" id="<?=$ecommerce_valori[0]['id']?>" value="<?=$combi_val[$combid]?>" />    
                             <div class="crt-upload-cmyk-res">
                               <!-- Module 2A -->
                               <div class="ez-wr">

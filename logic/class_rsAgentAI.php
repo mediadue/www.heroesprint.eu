@@ -29,8 +29,8 @@ class rsAgentAI {
         foreach ($this->commandHandlers as $commandName => $handler) {
             if (strpos($command, $commandName) === 0) {
                 // Esegue la funzione registrata
-                call_user_func($handler, $command, $data, $this);
-                return;
+                $result = call_user_func($handler, $command, $data, $this);
+                return $result; // Ritorna il risultato dell'handler
             }
         }
 
@@ -41,8 +41,7 @@ class rsAgentAI {
     function createNewSession() {
         $this->sessionId = uniqid();
         $_SESSION[$this->sessionId] = array('created_at' => time());
-        echo json_encode(array('session_id' => $this->sessionId));
-        exit;
+        return json_encode(array('session_id' => $this->sessionId));
     }
 
     function isSessionValid($sessionId) {
@@ -55,8 +54,7 @@ class rsAgentAI {
 
     function sendError($message) {
         $this->log("Errore: $message");
-        echo json_encode(array('error' => $message));
-        exit;
+        return json_encode(array('error' => $message));
     }
 
     function getSessionId() {

@@ -151,7 +151,7 @@ function CarrelloAjax(current,combi,strProdAdd,strProdMod,strProdCons) {
         
         g_obj.sendData("setCaratteristiche",id, function(msg) {
           var retmsg=msg.split("#AA134#");
-          
+          //alert(msg);
           var gallery=retmsg[1].split("#AA#");
           var abbinamenti=unserialize(rawurldecode(retmsg[3]));
           var quotazione=retmsg[4];
@@ -451,7 +451,7 @@ function CarrelloAjax(current,combi,strProdAdd,strProdMod,strProdCons) {
       m_btn.hide();
       
       g_obj.sendData("addCurrentToCart","-1", function(msg) {
-    	$("div.ecomm_viewcart").replaceWith(msg);
+        $("div.ecomm_viewcart").replaceWith(msg);
         $("div.ecomm_carrello .crt-result").fadeOut(function(){
           $("div.ecomm_carrello .crt-result-text").html(g_ProdAggiunto);
          
